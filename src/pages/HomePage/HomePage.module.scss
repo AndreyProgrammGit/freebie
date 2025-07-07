@@ -1,10 +1,12 @@
-@use "../../scss/index" as *;
+@use "../../scss/index"as *;
 
 .home__wrapper {
   width: 100%;
   height: 100%;
 
   .home__container {
+    width: 100%;
+
     .home__banner {
       background: linear-gradient($home-bg, $home-bg);
       position: relative;
@@ -21,7 +23,7 @@
         height: 256px;
         margin-right: 250px;
 
-        & > * {
+        &>* {
           margin-bottom: 15px;
         }
 
@@ -34,6 +36,7 @@
             color: $desc;
           }
         }
+
         &__title {
           display: flex;
           flex-direction: column;
@@ -45,12 +48,14 @@
             color: $title;
             margin-bottom: 10px;
           }
+
           &__item2 {
             font-family: Inter;
             font-weight: 100;
             font-size: 96px;
             line-height: 72px;
             color: $title;
+
             b {
               font-family: Inter;
               font-weight: 600;
@@ -70,6 +75,7 @@
             color: $button-text;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
+
             &:hover {
               background-color: purple;
             }
@@ -79,8 +85,8 @@
 
       .home__image {
         position: absolute;
-        transform: translateX(170%);
-        top: 100px;
+        transform: translateX(130%);
+
         img {
           width: 406px;
         }
@@ -90,6 +96,7 @@
     .home__small_banner {
       display: flex;
       flex-direction: row;
+      height: 730px;
 
       &__left {
         display: grid;
@@ -105,24 +112,23 @@
         grid-area: 1 / 1 / 2 / 3;
         display: flex;
         flex-direction: row;
-        overflow: hidden;
         align-items: center;
-        &__img {
-          width: 400px;
-          height: 500px;
-          img {
-            transform: translateX(-212px);
-          }
+
+        img {
+          height: 100%;
         }
+
         &__desc {
           width: 323px;
           padding-right: 48px;
+
           h2 {
             font-family: Inter;
             font-weight: 500;
             font-size: 49px;
             line-height: 40px;
           }
+
           span {
             color: $desc;
             font-family: Inter;
@@ -132,25 +138,28 @@
           }
         }
       }
+
       &__airPods {
         background-color: $headpones-bg;
         width: 486px;
         height: 310px;
-        // transform: translateX(-110px);
         grid-area: 2 / 1 / 3 / 2;
         display: flex;
         flex-direction: row;
         align-items: center;
+
         &__desc {
           margin-left: 15px;
           width: 323px;
           padding-right: 48px;
+
           h2 {
             font-family: Inter;
-            font-weight: 500;
-            font-size: 49px;
+            font-weight: 300;
+            font-size: 29px;
             line-height: 40px;
           }
+
           span {
             color: $desc;
             font-family: Inter;
@@ -160,11 +169,101 @@
           }
         }
       }
+
       &__oculus {
+        background-color: $oculus-bg;
         grid-area: 2 / 2 / 3 / 3;
         width: 486px;
         height: 310px;
         display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__desc {
+          padding-left: 40px;
+
+          h2 {
+            color: $title;
+            font-family: Inter;
+            font-weight: 300;
+            font-size: 29px;
+            line-height: 40px;
+          }
+
+          b {
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 29px;
+            line-height: 40px;
+          }
+
+          span {
+            color: $desc;
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+
+          }
+        }
+      }
+
+      &__macbook {
+        height: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        background-color: $macbook-bg;
+
+        &__desc {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 60px;
+
+          h2 {
+            font-family: Inter;
+            font-weight: 100;
+            font-size: 64px;
+            line-height: 56px;
+
+          }
+
+          b {
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 64px;
+            line-height: 56px;
+
+          }
+
+          span {
+            width: 80%;
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+
+          }
+
+          button {
+            margin-top: 20px;
+            width: 191px;
+            height: 56px;
+            border: 1px solid black;
+            border-radius: 6px;
+            padding: 15px;
+            // background-color: $home-bg;
+            color: $macbook-button;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              color: white;
+              background-color: purple;
+            }
+          }
+        }
       }
     }
   }

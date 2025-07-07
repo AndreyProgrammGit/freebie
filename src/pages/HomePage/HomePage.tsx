@@ -2,7 +2,8 @@ import classes from "./HomePage.module.scss";
 import phone from "./image/phone.png";
 import headphones from "./image/headphones.png";
 import oculus from "./image/oculus.png";
-import playstation from "./image/playtation.png";
+import playstation from "./image/PlayStation.png";
+import macbook from "./image/macbook.png";
 
 const HomePage = () => {
   return (
@@ -34,9 +35,7 @@ const HomePage = () => {
         <div className={classes.home__small_banner}>
           <div className={classes.home__small_banner__left}>
             <div className={classes.home__small_banner__playstation}>
-              {/* <div className={classes.home__small_banner__playstation__img}> */}
               <img src={playstation} alt="#" />
-              {/* </div> */}
               <div className={classes.home__small_banner__playstation__desc}>
                 <h2>Playstation 5</h2>
                 <span>
@@ -46,33 +45,38 @@ const HomePage = () => {
               </div>
             </div>
             <div className={classes.home__small_banner__airPods}>
-              <div className={classes.home__small_banner__airPods__img}>
-                <img width={207} src={headphones} alt="" />
-              </div>
+              <img src={headphones} alt="" />
               <div className={classes.home__small_banner__airPods__desc}>
                 <h2>
-                  Apple AirPods <b>Max</b>
+                  Apple <br />
+                  AirPods <br />
+                  <b>Max</b>
                 </h2>
-                <span>Computational audio. Listen, it's powerful</span>
+                <span>
+                  Computational audio. <br /> Listen, it's powerful
+                </span>
               </div>
             </div>
             <div className={classes.home__small_banner__oculus}>
-              <div className={classes.home__small_banner__oculus__img}>
-                <img height={190} src={oculus} alt="" />
-              </div>
+              <img src={oculus} alt="" />
               <div className={classes.home__small_banner__oculus__desc}>
-                <h2>Apple Vision Pro</h2>
-                <span>An immersive way to experience entertainment</span>
+                <h2>
+                  Apple <br />
+                  Vision <b>Pro</b>
+                </h2>
+                <span>
+                  An immersive way to <br /> experience entertainment
+                </span>
               </div>
             </div>
           </div>
           <div className={classes.home__small_banner__rigth}>
-            <div className={classes.home__small_banner__4}>
-              <div className={classes.home__small_banner__img4}>
-                <img src="" alt="#" />
-              </div>
-              <div className={classes.home__small_banner__desc4}>
-                <h2>Macbook Air</h2>
+            <div className={classes.home__small_banner__macbook}>
+              <img src={macbook} alt="#" />
+              <div className={classes.home__small_banner__macbook__desc}>
+                <h2>
+                  Macbook <br /> <b>Air</b>
+                </h2>
                 <span>
                   The new 15‑inch MacBook Air makes room for more of what you
                   love with a spacious Liquid Retina display.
