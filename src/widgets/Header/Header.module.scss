@@ -1,0 +1,64 @@
+@use "../../scss/index" as *;
+
+.active {
+  color: $active;
+}
+
+.header__wrapper {
+  padding: 15px;
+  .header__container {
+    width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .header__search_panel {
+      position: relative;
+
+      &__icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+      &__input {
+        width: 336px;
+        height: 16px;
+        border-radius: 8px;
+        border: none;
+        padding: 16px;
+        background-color: $input-bg;
+        color: $input-text;
+        &::placeholder {
+          color: $input-placeholder;
+          padding-left: 25px;
+        }
+      }
+    }
+
+    .header__nav {
+      width: 370px;
+      &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: $text;
+        &__item {
+          font-weight: 500;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .header__numbers__list {
+      width: 144px;
+      height: 35px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
