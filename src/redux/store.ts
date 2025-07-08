@@ -1,10 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { productsApi } from "./slice/products";
+import { categoriesApi } from "./slice/categories";
+import { bannerApi } from "./slice/banner";
 
 export const store = configureStore({
   reducer: {
     [productsApi.reducerPath]: productsApi.reducer,
+    [categoriesApi.reducerPath]: categoriesApi.reducer,
+    [bannerApi.reducerPath]: bannerApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productsApi.middleware),
+    getDefaultMiddleware()
+      .concat(productsApi.middleware)
+      .concat(categoriesApi.middleware)
+      .concat(bannerApi.middleware),
 });

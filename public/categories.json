@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Smartphones", "image": "/" },
+  { "id": 2, "name": "Cameras", "image": "/" },
+  { "id": 3, "name": "Watches", "image": "/" },
+  { "id": 4, "name": "Headphones", "image": "/" },
+  { "id": 5, "name": "Tablets", "image": "/" }
+]

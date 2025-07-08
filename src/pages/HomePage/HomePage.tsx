@@ -4,57 +4,35 @@ import headphones from "./image/banner/headphones.png";
 import oculus from "./image/banner/oculus.png";
 import playstation from "./image/banner/PlayStation.png";
 import macbook from "./image/banner/macbook.png";
-import phone_ic from "./image/phone_ic.png";
-import left from "./image/arrow/left.png";
-import right from "./image/arrow/right.png";
 import iphone_14_pro from "./image/products/iphone_14_pro.png";
-import ipad from "./image/banners/ipad.png";
+// import ipad from "./image/banners/ipad.png";
 import HeartIcon from "../../components/images/HeartIcon";
-import Card, { type TCardProps } from "../../components/Card/Card";
-import { useEffect, useState } from "react";
-import { getProducts } from "../../api/products";
 import { useGetProductsQuery } from "../../redux/slice/products";
 import CardList from "../../components/CardList/CardList";
 import { LOCALSTORAGE_NAME_CART } from "../../constant";
+import { Category } from "../../components/Category/Category";
+import { useGetCategoriesQuery } from "../../redux/slice/categories";
+import { Banner } from "../../components/Banner/Banner";
+import { useGetBannerQuery } from "../../redux/slice/banner";
 
 const HomePage = () => {
-  const { data, isError, isLoading } = useGetProductsQuery();
+  const { data: products } = useGetProductsQuery();
+  const { data: categories } = useGetCategoriesQuery();
+  const { data: banner } = useGetBannerQuery();
 
   const handleAddToCart = (id: number) => {
-    const cartData = localStorage.getItem(LOCALSTORAGE_NAME_CART);
-    if (!cartData?.length) {
-      return localStorage.setItem(LOCALSTORAGE_NAME_CART, `${id}`);
-    }
+    const data =
+      localStorage
+        .getItem(LOCALSTORAGE_NAME_CART)
+        ?.split(",")
+        .filter(Boolean) || [];
+    const strId = id.toString();
 
-    localStorage.setItem(LOCALSTORAGE_NAME_CART, cartData + `,${id}`);
-    const newData = localStorage.getItem(LOCALSTORAGE_NAME_CART);
+    const newData = data.includes(strId)
+      ? data.filter((item) => item !== strId)
+      : [...data, strId];
 
-    const tmp = [...new Set(newData?.split(","))].filter(
-      (item) => item !== "undefined"
-    );
-    console.log(tmp);
-    localStorage.setItem(LOCALSTORAGE_NAME_CART, tmp.toString());
-
-    // const tmpArr = cartData?.split(",").filter((el) => {
-    //   if (el !== "null" || el !== `${id}`) {
-    //     return el;
-    //   }
-    // });
-
-    // console.log({ tmpArr });
-
-    // if (!cartData?.length) {
-    // }
-
-    // if (cartData.includes(`${id}`)) {
-    // cartData.filter((itemid) => `${itemid}` === `${id}`);
-    // console.log({ cartData });
-    // }
-
-    // localStorage.setItem(localStorage);
-    // localStorage.setItem(LOCALSTORAGE_NAME_CART, cartData.toString());
-
-    // console.log({ cartData });
+    localStorage.setItem(LOCALSTORAGE_NAME_CART, newData.join(","));
   };
 
   return (
@@ -137,33 +115,18 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className={classes.home__category}>
-          <div className={classes.home__category__title}>
-            <h2>Browse By Category</h2>
-            <div className={classes.home__category__title__buttons}>
-              <img src={left} alt="#" />
-              <img src={right} alt="#" />
-            </div>
-          </div>
-          <div className={classes.home__category__slider}>
-            {[...Array(6)].map((item) => (
-              <div className={classes.home__category__slider__elements}>
-                <img src={phone_ic} alt="#" />
-                <span>Phones</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Category categories={categories} />
         <div className={classes.home__products}>
           <div className={classes.home__products__tags}>
             <span className={classes.active}>New Arrival</span>
             <span>Bestseller</span>
             <span>Featured Products</span>
           </div>
-          <CardList handleAddToCart={handleAddToCart} products={data} />
+          <CardList handleAddToCart={handleAddToCart} products={products} />
         </div>
-        <div className={classes.home__banners}>
-          {[...Array(4)].map((item) => (
+        {/* <Banner items={banner} /> */}
+        {/* <div className={classes.home__banners}>
+          {[...Array(4)].map(() => (
             <div className={classes.home__banners__item}>
               <img src={ipad} alt="ipad" />
               <div>
@@ -176,10 +139,10 @@ const HomePage = () => {
               <button>Shop Now</button>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className={classes.home__discounts}>
           <h2>Discounts up to -50%</h2>
-          {[...Array(8)].map((item) => (
+          {[...Array(4)].map(() => (
             <div className={classes.home__discounts__item}>
               <div>
                 <HeartIcon />

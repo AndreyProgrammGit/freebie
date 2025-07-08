@@ -1,0 +1,26 @@
+@use "../../../scss/index"as *;
+
+.home__category__slider {
+    &__elements {
+        background-color: $card-bg;
+        border-radius: 16px;
+        width: 168px;
+        height: 126px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        img {
+            margin-bottom: 20px;
+        }
+    }
+}

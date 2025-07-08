@@ -6,7 +6,8 @@
     "price": 900,
     "image": "https://example.com/images/iphone14promax.png",
     "isFavorite": false,
-    "buttonText": "Buy Now"
+    "buttonText": "Buy Now",
+    "category": "Smartphones"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "price": 2535,
     "image": "https://example.com/images/blackmagic6k.png",
     "isFavorite": false,
-    "buttonText": "Buy Now"
+    "buttonText": "Buy Now",
+    "category": "Cameras"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "price": 399,
     "image": "https://example.com/images/applewatch9.png",
     "isFavorite": false,
-    "buttonText": "Buy Now"
+    "buttonText": "Buy Now",
+    "category": "Watches"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "price": 549,
     "image": "https://example.com/images/airpodsmax.png",
     "isFavorite": false,
-    "buttonText": "Buy Now"
+    "buttonText": "Buy Now",
+    "category": "Headphones"
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "price": 369,
     "image": "https://example.com/images/galaxywatch6.png",
     "isFavorite": false,
-    "buttonText": "Buy Now"
+    "buttonText": "Buy Now",
+    "category": "Watches"
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "price": 1799,
     "image": "https://example.com/images/galaxyzfold5.png",
     "isFavorite": true,
-    "buttonText": "Buy Now"
+    "buttonText": "Buy Now",
+    "category": "Smartphones"
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "price": 99.99,
     "image": "https://example.com/images/galaxybudsfe.png",
     "isFavorite": false,
-    "buttonText": "Buy Now"
+    "buttonText": "Buy Now",
+    "category": "Headphones"
   },
   {
     "id": 8,
@@ -69,6 +76,7 @@
     "price": 398,
     "image": "https://example.com/images/ipad9.png",
     "isFavorite": false,
-    "buttonText": "Buy Now"
+    "buttonText": "Buy Now",
+    "category": "Tablets"
   }
 ]

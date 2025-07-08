@@ -2,6 +2,7 @@ import React, { type FC } from "react";
 
 import classes from "./Card.module.scss";
 import HeartIcon from "../images/HeartIcon";
+import iphone_14_pro from "../../pages/HomePage/image/products/iphone_14_pro.png";
 
 export type TCardProps = {
   id: number;
@@ -16,8 +17,8 @@ const Card: FC<TCardProps> = ({
   id,
   name,
   price,
-  image,
-  isFavorite,
+  // image,
+  // isFavorite,
   handleAddToCart,
 }) => (
   <li>
@@ -25,7 +26,7 @@ const Card: FC<TCardProps> = ({
       <div onClick={() => handleAddToCart(id)}>
         <HeartIcon />
       </div>
-      <img src={image} alt="iphone" />
+      <img src={iphone_14_pro} alt="iphone" />
       <div className={classes.card__info}>
         <span>{name}</span>
         <span>
