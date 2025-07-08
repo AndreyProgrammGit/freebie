@@ -1,6 +1,7 @@
 const HeartIcon = () => {
   return (
     <svg
+      style={{ cursor: "pointer" }}
       width="32"
       height="32"
       viewBox="0 0 24 24"

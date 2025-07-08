@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Apple iPhone 14 Pro Max",
+    "variant": "128GB Deep Purple",
+    "price": 900,
+    "image": "https://example.com/images/iphone14promax.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now"
+  },
+  {
+    "id": 2,
+    "name": "Blackmagic Pocket Cinema Camera",
+    "variant": "6k",
+    "price": 2535,
+    "image": "https://example.com/images/blackmagic6k.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now"
+  },
+  {
+    "id": 3,
+    "name": "Apple Watch Series 9 GPS",
+    "variant": "41mm Starlight Aluminium",
+    "price": 399,
+    "image": "https://example.com/images/applewatch9.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now"
+  },
+  {
+    "id": 4,
+    "name": "AirPods Max",
+    "variant": "Silver Starlight Aluminium",
+    "price": 549,
+    "image": "https://example.com/images/airpodsmax.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now"
+  },
+  {
+    "id": 5,
+    "name": "Samsung Galaxy Watch6 Classic",
+    "variant": "47mm Black",
+    "price": 369,
+    "image": "https://example.com/images/galaxywatch6.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now"
+  },
+  {
+    "id": 6,
+    "name": "Galaxy Z Fold5 Unlocked",
+    "variant": "256GB | Phantom Black",
+    "price": 1799,
+    "image": "https://example.com/images/galaxyzfold5.png",
+    "isFavorite": true,
+    "buttonText": "Buy Now"
+  },
+  {
+    "id": 7,
+    "name": "Galaxy Buds FE",
+    "variant": "Graphite",
+    "price": 99.99,
+    "image": "https://example.com/images/galaxybudsfe.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now"
+  },
+  {
+    "id": 8,
+    "name": "Apple iPad 9 10.2\"",
+    "variant": "64GB Wi-Fi Silver (MK2L3) 2021",
+    "price": 398,
+    "image": "https://example.com/images/ipad9.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now"
+  }
+]

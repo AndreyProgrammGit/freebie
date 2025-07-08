@@ -1,11 +1,11 @@
 import { type FC } from "react";
 
 import classes from "./Header.module.scss";
-import HeartIcon from "../../components/HeartIcon";
-import CartIcon from "../../components/CartIcon";
-import UserIcon from "../../components/UserIcon";
-import LogoIcon from "../../components/LogoIcon";
-import SearchIcon from "../../components/SearchIcon";
+import HeartIcon from "../../components/images/HeartIcon";
+import CartIcon from "../../components/images/CartIcon";
+import UserIcon from "../../components/images/UserIcon";
+import LogoIcon from "../../components/images/LogoIcon";
+import SearchIcon from "../../components/images/SearchIcon";
 import { Link } from "react-router";
 
 interface HeaderProps {}
