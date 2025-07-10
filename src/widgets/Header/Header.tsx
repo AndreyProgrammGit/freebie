@@ -15,7 +15,7 @@ const Header: FC<HeaderProps> = () => {
     <div className={classes.header__wrapper}>
       <div className={classes.header__container}>
         <div className={classes.header__title}>
-          <LogoIcon />
+          <LogoIcon color="black" />
         </div>
         <div className={classes.header__search_panel}>
           <input

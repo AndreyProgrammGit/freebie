@@ -1,4 +1,4 @@
-@use "../../scss/index"as *;
+@use "../../scss/index" as *;
 
 .active {
   color: $active !important;
@@ -27,7 +27,7 @@
         height: 256px;
         margin-right: 250px;
 
-        &>* {
+        & > * {
           margin-bottom: 15px;
         }
 
@@ -404,6 +404,12 @@
           text-align: center;
         }
       }
+    }
+
+    .home__discounts {
+      width: 1440px;
+      margin: 0 auto;
+      padding: 3rem;
     }
   }
 }

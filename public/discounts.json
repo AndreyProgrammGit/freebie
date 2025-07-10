@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3,
+    "name": "Apple Watch Series 9 GPS",
+    "variant": "41mm Starlight Aluminium",
+    "price": 399,
+    "image": "https://example.com/images/applewatch9.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now",
+    "category": "Watches"
+  },
+  {
+    "id": 6,
+    "name": "Galaxy Z Fold5 Unlocked",
+    "variant": "256GB | Phantom Black",
+    "price": 1799,
+    "image": "https://example.com/images/galaxyzfold5.png",
+    "isFavorite": true,
+    "buttonText": "Buy Now",
+    "category": "Smartphones"
+  },
+  {
+    "id": 8,
+    "name": "Apple iPad 9 10.2\"",
+    "variant": "64GB Wi-Fi Silver (MK2L3) 2021",
+    "price": 398,
+    "image": "https://example.com/images/ipad9.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now",
+    "category": "Tablets"
+  },
+  {
+    "id": 7,
+    "name": "Galaxy Buds FE",
+    "variant": "Graphite",
+    "price": 99.99,
+    "image": "https://example.com/images/galaxybudsfe.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now",
+    "category": "Headphones"
+  }
+]

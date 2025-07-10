@@ -1,0 +1,62 @@
+@use "../../../../scss/index" as *;
+.home__sale {
+  width: 100%;
+  height: 37rem;
+  background-repeat: no-repeat;
+  background-image: url("../../images/photo_2025-07-09_12-35-50.jpg");
+  background-size: 1920px auto;
+  &__container {
+    height: 100%;
+    &__info {
+      padding: 10rem 4rem 0rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 8rem;
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        h2 {
+          color: $sale-title;
+          margin-bottom: 0;
+          font-family: Inter;
+          font-weight: 100;
+          font-size: 72px;
+          line-height: 72px;
+          b {
+            font-family: Inter;
+            font-weight: 300;
+            font-size: 72px;
+            line-height: 72px;
+          }
+        }
+        span {
+          color: $sale-subtitle;
+          font-family: Inter;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 32px;
+        }
+      }
+      button {
+        width: 191px;
+        height: 56px;
+        border: 1px solid white;
+        border-radius: 6px;
+        padding: 15px;
+        background-color: transparent;
+        color: $button-text;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: purple;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.list__wrapper {
+  display: flex;
+  gap: 1.35rem;
+  align-items: center;
+}
+
+.list__container {
+  display: flex;
+  gap: 0.5rem;
+
+  &__item {
+    &__select {
+      padding: 0.5rem;
+    }
+  }
+}

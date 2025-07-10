@@ -1,17 +1,22 @@
-import React from "react";
+import React, { type FC } from "react";
+import Element from "./Element/Element";
+import classes from "./Banner.module.scss";
+type TProps = {
+  items:
+    | {
+        id: number;
+        title: string;
+        image: string;
+        description: string;
+      }[]
+    | undefined;
+};
 
-export const Banner = () => (
-  <div className={"classes.home__banners"}>
-    <div className={"classes.home__banners__item"}>
-      <img src={"ipad"} alt="ipad" />
-      <div>
-        <h2>Popular Products</h2>
-        <span>
-          iPad combines a magnificent 10.2-inch Retina display, incredible
-          performance, multitasking and ease of use.
-        </span>
-      </div>
-      <button>Shop Now</button>
+export const Banner: FC<TProps> = ({ items }) => {
+  console.log(items);
+  return (
+    <div className={classes.home__banners}>
+      {items && items.map((item) => <Element key={item.id} {...item} />)}
     </div>
-  </div>
-);
+  );
+};

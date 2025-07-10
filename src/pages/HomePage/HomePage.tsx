@@ -1,12 +1,9 @@
 import classes from "./HomePage.module.scss";
-import phone from "./image/phone.png";
-import headphones from "./image/banner/headphones.png";
-import oculus from "./image/banner/oculus.png";
-import playstation from "./image/banner/PlayStation.png";
-import macbook from "./image/banner/macbook.png";
-import iphone_14_pro from "./image/products/iphone_14_pro.png";
-// import ipad from "./image/banners/ipad.png";
-import HeartIcon from "../../components/images/HeartIcon";
+import phone from "./images/phone.png";
+import headphones from "./images/banner/headphones.png";
+import oculus from "./images/banner/oculus.png";
+import playstation from "./images/banner/PlayStation.png";
+import macbook from "./images/banner/macbook.png";
 import { useGetProductsQuery } from "../../redux/slice/products";
 import CardList from "../../components/CardList/CardList";
 import { LOCALSTORAGE_NAME_CART } from "../../constant";
@@ -14,11 +11,14 @@ import { Category } from "../../components/Category/Category";
 import { useGetCategoriesQuery } from "../../redux/slice/categories";
 import { Banner } from "../../components/Banner/Banner";
 import { useGetBannerQuery } from "../../redux/slice/banner";
+import { useGetDiscountsQuery } from "../../redux/slice/discounts";
+import SaleBanner from "./components/SaleBanner/SaleBanner";
 
 const HomePage = () => {
   const { data: products } = useGetProductsQuery();
   const { data: categories } = useGetCategoriesQuery();
   const { data: banner } = useGetBannerQuery();
+  const { data: discounts } = useGetDiscountsQuery();
 
   const handleAddToCart = (id: number) => {
     const data =
@@ -124,42 +124,12 @@ const HomePage = () => {
           </div>
           <CardList handleAddToCart={handleAddToCart} products={products} />
         </div>
-        {/* <Banner items={banner} /> */}
-        {/* <div className={classes.home__banners}>
-          {[...Array(4)].map(() => (
-            <div className={classes.home__banners__item}>
-              <img src={ipad} alt="ipad" />
-              <div>
-                <h2>Popular Products</h2>
-                <span>
-                  iPad combines a magnificent 10.2-inch Retina display,
-                  incredible performance, multitasking and ease of use.
-                </span>
-              </div>
-              <button>Shop Now</button>
-            </div>
-          ))}
-        </div> */}
+        <Banner items={banner} />
         <div className={classes.home__discounts}>
           <h2>Discounts up to -50%</h2>
-          {[...Array(4)].map(() => (
-            <div className={classes.home__discounts__item}>
-              <div>
-                <HeartIcon />
-              </div>
-              <img src={iphone_14_pro} alt="iphone" />
-              <div className={classes.home__discounts__item__info}>
-                <span>Apple iPhone 14 Pro Max 128GB Deep Purple</span>
-                <span>
-                  <b>$900</b>
-                </span>
-              </div>
-              <button>
-                <span>Buy Now</span>
-              </button>
-            </div>
-          ))}
+          <CardList handleAddToCart={handleAddToCart} products={discounts} />
         </div>
+        <SaleBanner />
       </div>
     </div>
   );

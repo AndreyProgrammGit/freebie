@@ -1,28 +1,26 @@
-{
-  "products": [
-    {
-      "title": "Popular Products",
-      "image": "huawei_watch_earbuds.png",
-      "description": "Huawei smart watch and earbuds with excellent performance and ease of use.",
-      "button": "Shop Now"
-    },
-    {
-      "title": "iPad Pro",
-      "image": "ipad_pro.png",
-      "description": "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.",
-      "button": "Shop Now"
-    },
-    {
-      "title": "Samsung Galaxy",
-      "image": "samsung_galaxy.png",
-      "description": "Samsung Galaxy foldable phone with stunning display and multitasking capabilities.",
-      "button": "Shop Now"
-    },
-    {
-      "title": "Macbook Pro",
-      "image": "macbook_pro.png",
-      "description": "MacBook Pro with brilliant Retina display, incredible performance, and seamless multitasking.",
-      "button": "Shop Now"
-    }
-  ]
-}
+[
+  {
+    "title": "Popular Products",
+    "image": "huawei_watch_earbuds.png",
+    "description": "Huawei smart watch and earbuds with excellent performance and ease of use.",
+    "button": "Shop Now"
+  },
+  {
+    "title": "iPad Pro",
+    "image": "ipad_pro.png",
+    "description": "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.",
+    "button": "Shop Now"
+  },
+  {
+    "title": "Samsung Galaxy",
+    "image": "samsung_galaxy.png",
+    "description": "Samsung Galaxy foldable phone with stunning display and multitasking capabilities.",
+    "button": "Shop Now"
+  },
+  {
+    "title": "Macbook Pro",
+    "image": "macbook_pro.png",
+    "description": "MacBook Pro with brilliant Retina display, incredible performance, and seamless multitasking.",
+    "button": "Shop Now"
+  }
+]

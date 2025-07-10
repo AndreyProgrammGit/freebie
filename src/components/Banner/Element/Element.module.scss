@@ -1,0 +1,63 @@
+@use "../../../scss/index" as *;
+.home__banners__item {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  &:nth-child(2) {
+    background-color: #f9f9f9;
+  }
+
+  &:nth-child(3) {
+    background-color: #eaeaea;
+  }
+
+  &:nth-child(4) {
+    color: white;
+    button {
+      color: white !important;
+      border-color: white;
+    }
+    background-color: #2c2c2c;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      margin-top: 0;
+      font-family: Inter;
+      font-weight: 300;
+      font-size: 33px;
+      line-height: 48px;
+    }
+
+    span {
+      color: $card-text;
+      width: 300px;
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    width: 191px;
+    height: 56px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: purple;
+    }
+  }
+}

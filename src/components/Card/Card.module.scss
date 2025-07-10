@@ -30,10 +30,12 @@
   }
 
   button {
+    cursor: pointer;
     background-color: black;
     color: white;
     width: 168px;
     height: 48px;
+    transition: all 0.3s ease-in-out;
     border-radius: 8px;
     span {
       font-family: Inter;
@@ -41,6 +43,9 @@
       font-size: 14px;
       line-height: 24px;
       text-align: center;
+    }
+    &:hover {
+      background-color: purple;
     }
   }
 }

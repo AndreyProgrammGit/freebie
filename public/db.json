@@ -7,7 +7,24 @@
     "image": "https://example.com/images/iphone14promax.png",
     "isFavorite": false,
     "buttonText": "Buy Now",
-    "category": "Smartphones"
+    "category": "Smartphones",
+    "discountPrice": 1399,
+    "originalPrice": 1499,
+    "availableColors": ["black", "purple", "red", "yellow", "white"],
+    "availableStorageOptions": [
+      { "storage": "128GB", "isAvailable": true },
+      { "storage": "256GB", "isAvailable": true },
+      { "storage": "512GB", "isAvailable": false },
+      { "storage": "1TB", "isAvailable": true }
+    ],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "6.7\"" },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Apple A16 Bionic" },
+      { "label": "Cores", "icon": "core-icon", "desc": "6" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "48-12-12 MP" },
+      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "12 MP" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "4323 mAh" }
+    ]
   },
   {
     "id": 2,
@@ -17,7 +34,29 @@
     "image": "https://example.com/images/blackmagic6k.png",
     "isFavorite": false,
     "buttonText": "Buy Now",
-    "category": "Cameras"
+    "category": "Cameras",
+    "discountPrice": 2400,
+    "originalPrice": 2700,
+    "availableColors": ["black"],
+    "availableStorageOptions": [
+      { "storage": "512GB", "isAvailable": true },
+      { "storage": "1TB", "isAvailable": true }
+    ],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "5.5\"" },
+      {
+        "label": "CPU",
+        "icon": "cpu-icon",
+        "desc": "Blackmagic Custom Processor"
+      },
+      { "label": "Cores", "icon": "core-icon", "desc": "8" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "23 MP" },
+      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "10 MP" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "3500 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "3-5 days" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "2 years" }
+    ]
   },
   {
     "id": 3,
@@ -27,7 +66,22 @@
     "image": "https://example.com/images/applewatch9.png",
     "isFavorite": false,
     "buttonText": "Buy Now",
-    "category": "Watches"
+    "category": "Watches",
+    "discountPrice": 379,
+    "originalPrice": 429,
+    "availableColors": ["starlight", "midnight", "red"],
+    "availableStorageOptions": [{ "storage": "32GB", "isAvailable": true }],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "1.9\"" },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Apple S9 SiP" },
+      { "label": "Cores", "icon": "core-icon", "desc": "2" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "None" },
+      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "None" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "308 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1-2 day" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Tomorrow" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
   },
   {
     "id": 4,
@@ -37,7 +91,26 @@
     "image": "https://example.com/images/airpodsmax.png",
     "isFavorite": false,
     "buttonText": "Buy Now",
-    "category": "Headphones"
+    "category": "Headphones",
+    "discountPrice": 499,
+    "originalPrice": 599,
+    "availableColors": ["silver", "space gray", "green", "sky blue", "pink"],
+    "availableStorageOptions": [{ "storage": "N/A", "isAvailable": true }],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "N/A" },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Apple H1 Chips" },
+      { "label": "Cores", "icon": "core-icon", "desc": "2" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "None" },
+      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "None" },
+      {
+        "label": "Battery",
+        "icon": "battery-icon",
+        "desc": "20 hours playtime"
+      },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "2-3 days" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
   },
   {
     "id": 5,
@@ -47,7 +120,22 @@
     "image": "https://example.com/images/galaxywatch6.png",
     "isFavorite": false,
     "buttonText": "Buy Now",
-    "category": "Watches"
+    "category": "Watches",
+    "discountPrice": 349,
+    "originalPrice": 399,
+    "availableColors": ["black", "silver"],
+    "availableStorageOptions": [{ "storage": "16GB", "isAvailable": true }],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "1.5\"" },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Exynos W930" },
+      { "label": "Cores", "icon": "core-icon", "desc": "2" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "None" },
+      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "None" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "425 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1-2 day" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
   },
   {
     "id": 6,
@@ -57,7 +145,34 @@
     "image": "https://example.com/images/galaxyzfold5.png",
     "isFavorite": true,
     "buttonText": "Buy Now",
-    "category": "Smartphones"
+    "category": "Smartphones",
+    "discountPrice": 1699,
+    "originalPrice": 1899,
+    "availableColors": ["phantom black", "cream", "icy blue"],
+    "availableStorageOptions": [
+      { "storage": "256GB", "isAvailable": true },
+      { "storage": "512GB", "isAvailable": true },
+      { "storage": "1TB", "isAvailable": false }
+    ],
+    "specifications": [
+      {
+        "label": "Screen Size",
+        "icon": "screen-icon",
+        "desc": "7.6\" unfolded, 6.2\" cover"
+      },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Snapdragon 8 Gen 2" },
+      { "label": "Cores", "icon": "core-icon", "desc": "8" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "50-12-10 MP" },
+      {
+        "label": "Front Camera",
+        "icon": "front-camera-icon",
+        "desc": "10 MP cover, 4 MP under-display"
+      },
+      { "label": "Battery", "icon": "battery-icon", "desc": "4400 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1-2 day" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "2 years" }
+    ]
   },
   {
     "id": 7,
@@ -67,7 +182,30 @@
     "image": "https://example.com/images/galaxybudsfe.png",
     "isFavorite": false,
     "buttonText": "Buy Now",
-    "category": "Headphones"
+    "category": "Headphones",
+    "discountPrice": 89.99,
+    "originalPrice": 119.99,
+    "availableColors": ["graphite", "white"],
+    "availableStorageOptions": [{ "storage": "N/A", "isAvailable": true }],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "N/A" },
+      {
+        "label": "CPU",
+        "icon": "cpu-icon",
+        "desc": "Samsung Proprietary Chip"
+      },
+      { "label": "Cores", "icon": "core-icon", "desc": "1" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "None" },
+      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "None" },
+      {
+        "label": "Battery",
+        "icon": "battery-icon",
+        "desc": "30 hours with case"
+      },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "2-4 days" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
   },
   {
     "id": 8,
@@ -77,6 +215,28 @@
     "image": "https://example.com/images/ipad9.png",
     "isFavorite": false,
     "buttonText": "Buy Now",
-    "category": "Tablets"
+    "category": "Tablets",
+    "discountPrice": 379,
+    "originalPrice": 429,
+    "availableColors": ["silver", "space gray"],
+    "availableStorageOptions": [
+      { "storage": "64GB", "isAvailable": true },
+      { "storage": "256GB", "isAvailable": true }
+    ],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "10.2\"" },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "A13 Bionic" },
+      { "label": "Cores", "icon": "core-icon", "desc": "6" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "8 MP" },
+      {
+        "label": "Front Camera",
+        "icon": "front-camera-icon",
+        "desc": "12 MP Ultra Wide"
+      },
+      { "label": "Battery", "icon": "battery-icon", "desc": "8557 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1-2 day" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Tomorrow" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
   }
 ]

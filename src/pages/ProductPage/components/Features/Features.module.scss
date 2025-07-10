@@ -1,0 +1,23 @@
+.list__container {
+  // max-width: 33.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  &__item {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    white-space: nowrap;
+    background-color: #f4f4f4;
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    background-color: red;
+    max-width: 170px;
+    &__desc {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0.5rem;
+    }
+  }
+}
