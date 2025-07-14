@@ -7,10 +7,13 @@ import UserIcon from "../../components/images/UserIcon";
 import LogoIcon from "../../components/images/LogoIcon";
 import SearchIcon from "../../components/images/SearchIcon";
 import { Link } from "react-router";
+import { useAppSelector } from "../../redux/hooks";
 
 interface HeaderProps {}
 
 const Header: FC<HeaderProps> = () => {
+  const { cart } = useAppSelector((state) => state.cart);
+
   return (
     <div className={classes.header__wrapper}>
       <div className={classes.header__container}>
@@ -51,13 +54,18 @@ const Header: FC<HeaderProps> = () => {
         </div>
         <div className={classes.header__numbers}>
           <ul className={classes.header__numbers__list}>
-            <li className={classes.heaver__numbers__list__item}>
+            <li className={classes.header__numbers__list__item}>
               <HeartIcon />
             </li>
-            <li className={classes.heaver__numbers__list__item}>
-              <CartIcon />
+            <li className={classes.header__numbers__list__item}>
+              <span className={classes.header__numbers__list__item__count}>
+                {cart.length}
+              </span>
+              <Link to={"/cart"}>
+                <CartIcon />
+              </Link>
             </li>
-            <li className={classes.heaver__numbers__list__item}>
+            <li className={classes.header__numbers__list__item}>
               <UserIcon />
             </li>
           </ul>

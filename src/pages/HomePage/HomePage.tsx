@@ -13,12 +13,17 @@ import { Banner } from "../../components/Banner/Banner";
 import { useGetBannerQuery } from "../../redux/slice/api/banner";
 import { useGetDiscountsQuery } from "../../redux/slice/api/discounts";
 import SaleBanner from "./components/SaleBanner/SaleBanner";
+import { useEffect } from "react";
 
 const HomePage = () => {
   const { data: products } = useGetProductsQuery();
   const { data: categories } = useGetCategoriesQuery();
   const { data: banner } = useGetBannerQuery();
   const { data: discounts } = useGetDiscountsQuery();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleAddToCart = (id: number) => {
     const data =

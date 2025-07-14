@@ -7,8 +7,8 @@ type TProps = {
   handleChangeStorageSize: (size: string) => void;
   isSelect: string | undefined;
   storage: {
-    storage: "string";
-    isAvailable: unknown;
+    storage: string;
+    isAvailable: boolean;
   }[];
 };
 

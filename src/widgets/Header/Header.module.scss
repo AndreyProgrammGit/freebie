@@ -59,6 +59,15 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      &__item {
+        &:nth-child(2) {
+          position: relative;
+        }
+        &__count {
+          position: absolute;
+          transform: translate(35px, -8px);
+        }
+      }
     }
   }
 }

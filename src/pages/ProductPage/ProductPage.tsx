@@ -18,36 +18,40 @@ export type Spec = {
   desc: string;
 };
 
-type Data = {
-  data:
-    | {
-        name: string;
-        originalPrice: number;
-        desc: string;
-        availableColors: string[];
-        specifications: Spec[];
-        availableStorageOptions: {
-          storage: "string";
-          isAvailable: boolean;
-        }[];
-      }
-    | undefined;
+export type Data = {
+  id: number;
+  name: string;
+  originalPrice: number;
+  desc: string;
+  price: number;
+  quantityPrice?: number;
+  image: string;
+  availableColors: string[];
+  specifications: Spec[];
+  quantity?: number;
+  availableStorageOptions: {
+    storage: string;
+    isAvailable: boolean;
+  }[];
 };
 
 const ProductPage = () => {
   const { id } = useParams();
-  const { data } = useGetProductByIdQuery<Data>(+id!);
+  const { data } = useGetProductByIdQuery(+id!);
   const [storageSize, setStorageSize] = useState<string | undefined>();
   const [selectColor, setSelectColor] = useState<string | undefined>("");
   const dispatch = useAppDispatch();
 
-  console.log(selectColor);
   useEffect(() => {
     setStorageSize(
       data?.availableStorageOptions.find((el) => el.isAvailable)?.storage
     );
     setSelectColor(data?.availableColors[0]);
   }, [data]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleChangeStorageSize = (size: string) => {
     const tmp = data?.availableStorageOptions.find((el) => el.storage === size);
@@ -102,7 +106,7 @@ const ProductPage = () => {
             <ButtonGroup
               buttonTextFirst="Add to Wishlist"
               buttonTextSecond="Add to Card"
-              buttonSecondClick={handleAddToCart}
+              buttonClick={handleAddToCart}
             />
           </div>
         </div>

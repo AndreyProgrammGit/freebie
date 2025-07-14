@@ -1,0 +1,45 @@
+.wrapper {
+  width: 33.5rem;
+  &:not(:last-child) {
+    border-bottom: 1px solid #a3a3a3;
+  }
+  padding-top: 1.3rem;
+  padding-bottom: 2.3rem;
+
+  .container {
+    display: flex;
+
+    img {
+      max-width: 90px;
+      max-height: 90px;
+      margin-right: 1rem;
+    }
+
+    h3 {
+      width: 12rem;
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__actions {
+      display: flex;
+      width: 15rem;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+
+      &__price {
+        font-family: Inter;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+      }
+
+      &__remove {
+        cursor: pointer;
+      }
+    }
+  }
+}
