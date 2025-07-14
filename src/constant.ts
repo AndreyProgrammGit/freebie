@@ -1,1 +1,2 @@
-export const LOCALSTORAGE_NAME_CART = "card";
+export const LOCALSTORAGE_NAME_FAVORITE = "favorite";
+export const LOCALSTORAGE_NAME_CART = "cart";

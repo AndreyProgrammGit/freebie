@@ -1,19 +1,23 @@
+@use '../../../../scss/colors'as *;
+
 .list__container {
-  // max-width: 33.5rem;
+  max-width: 33.5rem;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
+
   &__item {
+    width: calc(33.3% - 1rem); // flex-basis: 33.3%;
     align-items: center;
     display: flex;
     flex: 1;
     white-space: nowrap;
-    background-color: #f4f4f4;
     padding: 0.5rem 1rem;
     border-radius: 7px;
-    background-color: red;
-    max-width: 170px;
+    background-color: $features-tth-bg;
+
     &__desc {
       display: flex;
       flex-direction: column;

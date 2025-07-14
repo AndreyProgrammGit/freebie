@@ -9,7 +9,7 @@ type TProps = {
 
 const FeaturesItem = ({
   label,
-  icon,
+  // icon,
   desc,
 }: {
   label: string;

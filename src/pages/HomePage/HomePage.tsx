@@ -4,14 +4,14 @@ import headphones from "./images/banner/headphones.png";
 import oculus from "./images/banner/oculus.png";
 import playstation from "./images/banner/PlayStation.png";
 import macbook from "./images/banner/macbook.png";
-import { useGetProductsQuery } from "../../redux/slice/products";
+import { useGetProductsQuery } from "../../redux/slice/api/products";
 import CardList from "../../components/CardList/CardList";
-import { LOCALSTORAGE_NAME_CART } from "../../constant";
+import { LOCALSTORAGE_NAME_FAVORITE } from "../../constant";
 import { Category } from "../../components/Category/Category";
-import { useGetCategoriesQuery } from "../../redux/slice/categories";
+import { useGetCategoriesQuery } from "../../redux/slice/api/categories";
 import { Banner } from "../../components/Banner/Banner";
-import { useGetBannerQuery } from "../../redux/slice/banner";
-import { useGetDiscountsQuery } from "../../redux/slice/discounts";
+import { useGetBannerQuery } from "../../redux/slice/api/banner";
+import { useGetDiscountsQuery } from "../../redux/slice/api/discounts";
 import SaleBanner from "./components/SaleBanner/SaleBanner";
 
 const HomePage = () => {
@@ -23,7 +23,7 @@ const HomePage = () => {
   const handleAddToCart = (id: number) => {
     const data =
       localStorage
-        .getItem(LOCALSTORAGE_NAME_CART)
+        .getItem(LOCALSTORAGE_NAME_FAVORITE)
         ?.split(",")
         .filter(Boolean) || [];
     const strId = id.toString();
@@ -32,7 +32,7 @@ const HomePage = () => {
       ? data.filter((item) => item !== strId)
       : [...data, strId];
 
-    localStorage.setItem(LOCALSTORAGE_NAME_CART, newData.join(","));
+    localStorage.setItem(LOCALSTORAGE_NAME_FAVORITE, newData.join(","));
   };
 
   return (

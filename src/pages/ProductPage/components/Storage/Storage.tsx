@@ -8,7 +8,7 @@ type TProps = {
   isSelect: string | undefined;
   storage: {
     storage: "string";
-    isAvailable: any;
+    isAvailable: unknown;
   }[];
 };
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useGetProductByIdQuery } from "../../redux/slice/products";
+import { useGetProductByIdQuery } from "../../redux/slice/api/products";
 import { useParams } from "react-router";
 
 import classes from "./ProductPage.module.scss";
@@ -8,6 +8,9 @@ import NotFound from "../NotFound/NotFound";
 import Storage from "./components/Storage/Storage";
 import ProductColors from "./components/ProductColors/ProductColors";
 import Container from "../../components/Container/Container";
+import { ButtonGroup } from "../../components/ButtonGroup/ButtonGroup";
+import { useAppDispatch } from "../../redux/hooks";
+import { addToCart } from "../../redux/slice/cart";
 
 export type Spec = {
   label: string;
@@ -20,6 +23,7 @@ type Data = {
     | {
         name: string;
         originalPrice: number;
+        desc: string;
         availableColors: string[];
         specifications: Spec[];
         availableStorageOptions: {
@@ -35,6 +39,7 @@ const ProductPage = () => {
   const { data } = useGetProductByIdQuery<Data>(+id!);
   const [storageSize, setStorageSize] = useState<string | undefined>();
   const [selectColor, setSelectColor] = useState<string | undefined>("");
+  const dispatch = useAppDispatch();
 
   console.log(selectColor);
   useEffect(() => {
@@ -48,6 +53,10 @@ const ProductPage = () => {
     const tmp = data?.availableStorageOptions.find((el) => el.storage === size);
 
     if (tmp?.isAvailable) setStorageSize(size);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(data));
   };
 
   const handleChangeColor = (color: string) => {
@@ -85,6 +94,16 @@ const ProductPage = () => {
             <div>
               <Features data={data.specifications} />
             </div>
+            <div>
+              <span className={classes.product__container__item__info__desc}>
+                {data?.desc}
+              </span>
+            </div>
+            <ButtonGroup
+              buttonTextFirst="Add to Wishlist"
+              buttonTextSecond="Add to Card"
+              buttonSecondClick={handleAddToCart}
+            />
           </div>
         </div>
       </Container>

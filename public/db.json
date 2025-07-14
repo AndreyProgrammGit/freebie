@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Apple iPhone 14 Pro Max",
     "variant": "128GB Deep Purple",
+    "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, consectetur temporibus? Repellat sapiente odio et nobis dicta rerum, eveniet natus doloremque accusamus repellendus quas culpa beatae, tempora cum optio aperiam?",
     "price": 900,
     "image": "https://example.com/images/iphone14promax.png",
     "isFavorite": false,

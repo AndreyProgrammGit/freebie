@@ -1,0 +1,44 @@
+@use '../../scss/index'as *;
+
+.buttonContainer {
+    max-width: 33.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonFirst {
+    border: 1px solid #000000;
+    border-radius: 6px;
+    width: calc(50% - 1rem);
+    background-color: transparent;
+    color: $features-buttonOne-text;
+    padding: calc(1rem - 1px) 4rem;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #000000;
+        color: #FFFFFF;
+    }
+}
+
+.ButtonSecond {
+    border: none;
+    border-radius: 6px;
+    width: calc(50% - 1rem);
+    background-color: $features-buttonTwo-bg;
+    color: $features-buttonTwo-text;
+    cursor: pointer;
+    padding: 1rem 4rem 1rem 4rem;
+    transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover {
+        padding: calc(1rem - 1px) 4rem;
+        border: 1px solid #000000;
+        background-color: #FFFFFF;
+        color: #000000;
+    }
+}
