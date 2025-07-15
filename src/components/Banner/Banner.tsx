@@ -13,7 +13,6 @@ type TProps = {
 };
 
 export const Banner: FC<TProps> = ({ items }) => {
-  console.log(items);
   return (
     <div className={classes.home__banners}>
       {items && items.map((item) => <Element key={item.id} {...item} />)}

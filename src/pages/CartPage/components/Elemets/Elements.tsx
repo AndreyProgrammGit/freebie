@@ -1,5 +1,5 @@
 import React, { type FC } from "react";
-import img from "../../HomePage/images/products/iphone_14_pro.png";
+import img from "../../../HomePage/images/products/iphone_14_pro.png";
 
 import classes from "./Elements.module.scss";
 

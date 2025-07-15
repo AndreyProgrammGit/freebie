@@ -26,6 +26,7 @@ export type Data = {
   price: number;
   quantityPrice?: number;
   image: string;
+  isFavorite: boolean;
   availableColors: string[];
   specifications: Spec[];
   quantity?: number;

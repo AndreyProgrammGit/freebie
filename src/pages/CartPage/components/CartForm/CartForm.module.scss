@@ -50,19 +50,37 @@
       font-size: 14px;
       line-height: 16px;
     }
-    input {
-      border: 1px solid #9f9f9f;
-      border-radius: 7px;
-      width: calc(25.5rem - 2rem);
-      height: calc(3.5rem - 2rem);
-      padding: 1rem;
-      &::placeholder {
+    div {
+      position: relative;
+      input {
+        border: 1px solid #9f9f9f;
+        border-radius: 7px;
+        width: calc(25.5rem - 2rem);
+        height: calc(3.5rem - 2rem);
+        padding: 1rem;
+        &::placeholder {
+          font-family: Inter;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 24px;
+          vertical-align: middle;
+          color: #979797;
+        }
+      }
+      button {
+        position: absolute;
+        width: 5rem;
+        padding: 0.5rem;
+        right: 1rem;
+        top: 0.7rem;
+        background-color: transparent;
+        border-radius: 6px;
         font-family: Inter;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 24px;
-        vertical-align: middle;
-        color: #979797;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        cursor: pointer;
+        // transform: translate(385%, -46px);
       }
     }
   }
@@ -91,7 +109,7 @@
       justify-content: space-between;
     }
   }
-  button {
+  &__button {
     cursor: pointer;
     border-radius: 6px;
     background-color: #000000;

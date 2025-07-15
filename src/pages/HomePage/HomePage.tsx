@@ -6,38 +6,45 @@ import playstation from "./images/banner/PlayStation.png";
 import macbook from "./images/banner/macbook.png";
 import { useGetProductsQuery } from "../../redux/slice/api/products";
 import CardList from "../../components/CardList/CardList";
-import { LOCALSTORAGE_NAME_FAVORITE } from "../../constant";
 import { Category } from "../../components/Category/Category";
 import { useGetCategoriesQuery } from "../../redux/slice/api/categories";
 import { Banner } from "../../components/Banner/Banner";
 import { useGetBannerQuery } from "../../redux/slice/api/banner";
 import { useGetDiscountsQuery } from "../../redux/slice/api/discounts";
 import SaleBanner from "./components/SaleBanner/SaleBanner";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import {
+  addToFavorite,
+  loadFavorite,
+  removeOne,
+  type Favorite,
+} from "../../redux/slice/favorite";
 
 const HomePage = () => {
   const { data: products } = useGetProductsQuery();
   const { data: categories } = useGetCategoriesQuery();
   const { data: banner } = useGetBannerQuery();
   const { data: discounts } = useGetDiscountsQuery();
+  const dispatch = useAppDispatch();
+  const { favorite } = useAppSelector((state) => state.favorite);
+
+  const favoriteIds = favorite.map((el) => el.id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleAddToCart = (id: number) => {
-    const data =
-      localStorage
-        .getItem(LOCALSTORAGE_NAME_FAVORITE)
-        ?.split(",")
-        .filter(Boolean) || [];
-    const strId = id.toString();
+  useEffect(() => {
+    dispatch(loadFavorite());
+  }, []);
 
-    const newData = data.includes(strId)
-      ? data.filter((item) => item !== strId)
-      : [...data, strId];
+  const handleAddToFavorite = (data: Favorite) => {
+    dispatch(addToFavorite(data));
+  };
 
-    localStorage.setItem(LOCALSTORAGE_NAME_FAVORITE, newData.join(","));
+  const handleRemoveFavorite = (id: number) => {
+    dispatch(removeOne(id));
   };
 
   return (
@@ -127,12 +134,22 @@ const HomePage = () => {
             <span>Bestseller</span>
             <span>Featured Products</span>
           </div>
-          <CardList handleAddToCart={handleAddToCart} products={products} />
+          <CardList
+            handleRemoveFavorite={handleRemoveFavorite}
+            favoriteIds={favoriteIds}
+            handleAddToFavorite={handleAddToFavorite}
+            products={products}
+          />
         </div>
         <Banner items={banner} />
         <div className={classes.home__discounts}>
           <h2>Discounts up to -50%</h2>
-          <CardList handleAddToCart={handleAddToCart} products={discounts} />
+          <CardList
+            handleRemoveFavorite={handleRemoveFavorite}
+            favoriteIds={favoriteIds}
+            handleAddToFavorite={handleAddToFavorite}
+            products={discounts}
+          />
         </div>
         <SaleBanner />
       </div>

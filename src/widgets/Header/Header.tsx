@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import { useEffect, useState, type FC } from "react";
 
 import classes from "./Header.module.scss";
 import HeartIcon from "../../components/images/HeartIcon";
@@ -8,11 +8,28 @@ import LogoIcon from "../../components/images/LogoIcon";
 import SearchIcon from "../../components/images/SearchIcon";
 import { Link } from "react-router";
 import { useAppSelector } from "../../redux/hooks";
+import {
+  LOCALSTORAGE_NAME_CART,
+  LOCALSTORAGE_NAME_FAVORITE,
+} from "../../constant";
 
 interface HeaderProps {}
 
 const Header: FC<HeaderProps> = () => {
-  const { cart } = useAppSelector((state) => state.cart);
+  // const { cart } = useAppSelector((state) => state.cart);
+  const [cart, setCart] = useState<string[]>([]);
+  const [favorite, setFavorite] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (localStorage.getItem(LOCALSTORAGE_NAME_CART)) {
+      setCart(JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME_CART)!));
+    }
+    if (localStorage.getItem(LOCALSTORAGE_NAME_FAVORITE)) {
+      setFavorite(
+        JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME_FAVORITE)!)
+      );
+    }
+  }, []);
 
   return (
     <div className={classes.header__wrapper}>
@@ -55,10 +72,13 @@ const Header: FC<HeaderProps> = () => {
         <div className={classes.header__numbers}>
           <ul className={classes.header__numbers__list}>
             <li className={classes.header__numbers__list__item}>
+              <span className={classes.header__numbers__list__item__favorite}>
+                {favorite.length}
+              </span>
               <HeartIcon />
             </li>
             <li className={classes.header__numbers__list__item}>
-              <span className={classes.header__numbers__list__item__count}>
+              <span className={classes.header__numbers__list__item__cart}>
                 {cart.length}
               </span>
               <Link to={"/cart"}>

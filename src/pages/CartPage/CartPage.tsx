@@ -10,8 +10,8 @@ import {
   removeOne,
 } from "../../redux/slice/cart";
 
-import Elements from "./Elemets/Elements";
-import CartForm from "./CartForm/CartForm";
+import Elements from "./components/Elemets/Elements";
+import CartForm from "./components/CartForm/CartForm";
 
 const CartPage = () => {
   const dispatch = useAppDispatch();
@@ -46,7 +46,6 @@ const CartPage = () => {
     let sum = 0;
     for (const value of cart) {
       sum += value.quantityPrice!;
-      // console.log(value.quantityPrice);
     }
     return sum;
   };
@@ -74,7 +73,7 @@ const CartPage = () => {
           </ul>
         </div>
         <div className={classes.cart__summary__wrapper}>
-          <CartForm />
+          <CartForm sumPriceAllProductsCart={sumPriceAllProductsCart} />
         </div>
       </div>
     </Container>
