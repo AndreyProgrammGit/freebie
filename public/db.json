@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "brand": "Apple",
     "name": "Apple iPhone 14 Pro Max",
     "variant": "128GB Deep Purple",
     "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, consectetur temporibus? Repellat sapiente odio et nobis dicta rerum, eveniet natus doloremque accusamus repellendus quas culpa beatae, tempora cum optio aperiam?",
@@ -29,6 +30,7 @@
   },
   {
     "id": 2,
+    "brand": "Blackmagic Design",
     "name": "Blackmagic Pocket Cinema Camera",
     "variant": "6k",
     "price": 2535,
@@ -61,6 +63,7 @@
   },
   {
     "id": 3,
+    "brand": "Apple",
     "name": "Apple Watch Series 9 GPS",
     "variant": "41mm Starlight Aluminium",
     "price": 399,
@@ -86,6 +89,7 @@
   },
   {
     "id": 4,
+    "brand": "Apple",
     "name": "AirPods Max",
     "variant": "Silver Starlight Aluminium",
     "price": 549,
@@ -115,6 +119,7 @@
   },
   {
     "id": 5,
+    "brand": "Samsung",
     "name": "Samsung Galaxy Watch6 Classic",
     "variant": "47mm Black",
     "price": 369,
@@ -140,6 +145,7 @@
   },
   {
     "id": 6,
+    "brand": "Samsung",
     "name": "Galaxy Z Fold5 Unlocked",
     "variant": "256GB | Phantom Black",
     "price": 1799,
@@ -177,6 +183,7 @@
   },
   {
     "id": 7,
+    "brand": "Samsung",
     "name": "Galaxy Buds FE",
     "variant": "Graphite",
     "price": 99.99,
@@ -210,6 +217,7 @@
   },
   {
     "id": 8,
+    "brand": "Apple",
     "name": "Apple iPad 9 10.2\"",
     "variant": "64GB Wi-Fi Silver (MK2L3) 2021",
     "price": 398,

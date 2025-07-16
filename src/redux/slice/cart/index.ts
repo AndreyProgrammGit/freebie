@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { LOCALSTORAGE_NAME_CART } from "../../../constant";
-import type { Data } from "../../../pages/ProductPage/ProductPage";
+import type { Data } from "../../../pages/DetailsPage/DetailsPage";
 
 interface CartState {
   cart: Data[];

@@ -13,7 +13,6 @@ export interface TCardProps {
   image: string;
   variant: string;
   isFavorite: boolean;
-  favorite: any;
   favoriteIds: any;
   handleAddToFavorite: (data: Favorite) => void;
   handleRemoveFavorite: (id: number) => void;

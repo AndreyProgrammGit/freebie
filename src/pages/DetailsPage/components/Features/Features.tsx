@@ -1,6 +1,6 @@
 import React, { type FC } from "react";
 import classes from "./Features.module.scss";
-import type { Spec } from "../../ProductPage";
+import type { Spec } from "../../DetailsPage";
 import svg from "../../../../assets/icons/some.svg";
 
 type TProps = {
