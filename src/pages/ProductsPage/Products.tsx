@@ -11,12 +11,14 @@ import {
 import Container from "../../components/Container/Container";
 
 import classes from "./Products.module.scss";
+import { useFilter } from "../../context/filterContext";
 
 const Products = () => {
   const { data: products } = useGetProductsQuery();
   const dispatch = useAppDispatch();
 
   const { favorite } = useAppSelector((state) => state.favorite);
+  const { filters } = useFilter();
 
   const favoriteIds = favorite.map((el) => el.id);
 
@@ -42,6 +44,7 @@ const Products = () => {
             </select>
           </div>
           <CardList
+            filters={filters}
             favoriteIds={favoriteIds}
             products={products}
             handleAddToFavorite={handleAddToFavorite}

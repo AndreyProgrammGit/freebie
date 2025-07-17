@@ -1,2 +1,71 @@
 .accordion {
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+
+  &__block {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 0.75rem 0;
+    span {
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 3%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__search {
+    margin: 1rem 0;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #555;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      &:checked {
+        background-color: #000;
+      }
+      &:checked::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 4px;
+        width: 6px;
+        height: 9px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+    span {
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 24px;
+      letter-spacing: 0%;
+      margin-left: 0.5rem;
+    }
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
 }

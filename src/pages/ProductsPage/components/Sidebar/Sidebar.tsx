@@ -9,16 +9,10 @@ export type Product = {
 };
 
 const Sidebar: React.FC = () => {
-  const [flag, setFlag] = useState<boolean>(false);
-  const { brands, handleChangeChecked } = useFilter();
+  const { filters, handleChangeChecked } = useFilter();
 
   return (
-    <Accordion
-      flag={flag}
-      setFlag={setFlag}
-      options={brands}
-      handleChangeChecked={handleChangeChecked}
-    />
+    <Accordion options={filters} handleChangeChecked={handleChangeChecked} />
   );
 };
 

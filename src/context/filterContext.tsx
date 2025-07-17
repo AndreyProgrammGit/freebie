@@ -16,7 +16,7 @@ export type FilterState = {
 };
 
 type FilterContextType = {
-  brands: FilterState | null;
+  filters: FilterState | null;
   handleChangeChecked: ({
     blockName,
     item,
@@ -29,26 +29,29 @@ type FilterContextType = {
 const FilterContext = createContext<FilterContextType | null>(null);
 
 export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [brands, setBrands] = useState<FilterState | null>(null);
+  const [filters, setFilters] = useState<FilterState | null>(null);
+  const [selectedFitlers, setSelectedFilters] = useState<any>([]);
   const { data: products } = useGetProductsQuery();
+  const [serialization, setSerialization] = useState<any>([]);
 
   useEffect(() => {
     if (products) {
+      setSerialization(products);
       const tmp: FilterState = {
-        brands: {},
-        size: {},
+        brand: {},
+        category: {},
       };
 
       products.forEach((item: any) => {
         if (item.brand) {
-          tmp.brands[item.brand] = false;
+          tmp.brand[item.brand] = false;
         }
-        if (item.size) {
-          tmp.size[item.size] = false;
+        if (item.category) {
+          tmp.category[item.category] = false;
         }
       });
 
-      setBrands(tmp);
+      setFilters(tmp);
     }
   }, [products]);
 
@@ -59,7 +62,16 @@ export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
     blockName: string;
     item: string;
   }) => {
-    setBrands((prev) => {
+    const tmp = Object.entries(filters);
+    tmp.forEach(([key, value]) => {
+      products.map((el) => {
+        if (key in el && value) {
+          console.log(Object.entries(value).filter((item) => Boolean(item[1])));
+        }
+      });
+    });
+
+    setFilters((prev) => {
       if (!prev) return prev;
       return {
         ...prev,
@@ -72,7 +84,7 @@ export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
   };
 
   return (
-    <FilterContext.Provider value={{ brands, handleChangeChecked }}>
+    <FilterContext.Provider value={{ filters, handleChangeChecked }}>
       {children}
     </FilterContext.Provider>
   );
