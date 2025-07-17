@@ -60,8 +60,6 @@ export const cartSlice = createSlice({
           JSON.stringify(state.cart)
         );
       }
-
-      // console.log(JSON.parse(JSON.stringify(find.id)));
     },
     addOne: (state, action) => {
       state.cart = state.cart.map((item) => {

@@ -12,7 +12,7 @@ import { Banner } from "../../components/Banner/Banner";
 import { useGetBannerQuery } from "../../redux/slice/api/banner";
 import { useGetDiscountsQuery } from "../../redux/slice/api/discounts";
 import SaleBanner from "./components/SaleBanner/SaleBanner";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   addToFavorite,

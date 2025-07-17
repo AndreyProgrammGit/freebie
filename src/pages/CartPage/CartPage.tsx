@@ -18,11 +18,6 @@ const CartPage = () => {
   const { cart } = useAppSelector((state) => state.cart);
 
   useEffect(() => {
-    console.log(cart);
-    console.log(sumPriceAllProductsCart());
-  }, [cart]);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

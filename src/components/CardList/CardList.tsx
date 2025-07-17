@@ -35,9 +35,7 @@ const CardList: FC<TProps> = ({
     } else {
       setFilteredProducts(products);
     }
-  }, [filters]);
-
-  console.log(filters);
+  }, [products, filters]);
 
   return (
     <ul className={classes.home__products__block}>

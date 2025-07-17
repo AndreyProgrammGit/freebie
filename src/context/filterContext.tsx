@@ -30,9 +30,9 @@ const FilterContext = createContext<FilterContextType | null>(null);
 
 export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [filters, setFilters] = useState<FilterState | null>(null);
-  const [selectedFitlers, setSelectedFilters] = useState<any>([]);
   const { data: products } = useGetProductsQuery();
   const [serialization, setSerialization] = useState<any>([]);
+  const [filteredArr, setFitleredArr] = useState<any>([]);
 
   useEffect(() => {
     if (products) {
@@ -62,26 +62,69 @@ export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
     blockName: string;
     item: string;
   }) => {
-    const tmp = Object.entries(filters);
-    tmp.forEach(([key, value]) => {
-      products.map((el) => {
-        if (key in el && value) {
-          console.log(Object.entries(value).filter((item) => Boolean(item[1])));
-        }
-      });
-    });
+    // const tmp = Object.entries(filters);
+    // let tmp2;
+    // tmp.forEach(([key, value]) => {
+    //   products!.map((el) => {
+    //     if (key in el && value) {
+    //       const arr = Object.entries(value)
+    //         .filter((item) => Boolean(item[1]))
+    //         .map((item) => item[0]);
+    //       tmp2 = serialization.filter((item) => arr.includes(item[key]));
+    //       // console.log(tmp2);
+    //       setFitleredArr(tmp2);
+    //     }
+    //   });
+    // });
+
+    // setFilters((prev) => {
+    //   if (!prev) return prev;
+    //   return {
+    //     ...prev,
+    //     [blockName]: {
+    //       ...prev[blockName],
+    //       [item]: !prev[blockName][item],
+    //     },
+    //   };
+    // });
 
     setFilters((prev) => {
       if (!prev) return prev;
-      return {
+
+      const updated = {
         ...prev,
         [blockName]: {
           ...prev[blockName],
           [item]: !prev[blockName][item],
         },
       };
+
+      // Обновляем filteredArr на основе новых фильтров
+      const activeFilters = Object.entries(updated).reduce(
+        (acc, [block, values]) => {
+          const active = Object.entries(values)
+            .filter(([_, isActive]) => isActive)
+            .map(([name]) => name);
+          if (active.length > 0) {
+            acc[block] = active;
+          }
+          return acc;
+        },
+        {} as { [key: string]: string[] }
+      );
+
+      const filtered = serialization.filter((product: any) => {
+        return Object.entries(activeFilters).every(([block, activeValues]) =>
+          activeValues.includes(product[block])
+        );
+      });
+
+      setFitleredArr(filtered);
+      return updated;
     });
   };
+
+  console.log(filteredArr);
 
   return (
     <FilterContext.Provider value={{ filters, handleChangeChecked }}>

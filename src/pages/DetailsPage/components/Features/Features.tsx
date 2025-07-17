@@ -28,7 +28,6 @@ const FeaturesItem = ({
 );
 
 const Features: FC<TProps> = ({ data }) => {
-  //   console.log(data);
   return (
     <ul className={classes.list__container}>
       {data?.map((item, index) => (
