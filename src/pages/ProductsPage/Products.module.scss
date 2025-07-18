@@ -9,4 +9,41 @@
 }
 .card_list__container {
   width: 67%;
+
+  &__filter {
+    .custom_select_wrapper {
+      position: relative;
+      width: 16rem;
+
+      select {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        border: 1px solid #d4d4d4;
+        background-color: transparent;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+      }
+
+      &::after {
+        content: "⮟";
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        font-size: 14px;
+        color: #9f9f9f;
+      }
+    }
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+
+    span {
+      margin: auto 0;
+    }
+  }
 }

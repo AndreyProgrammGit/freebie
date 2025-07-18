@@ -7,28 +7,20 @@ import UserIcon from "../../components/images/UserIcon";
 import LogoIcon from "../../components/images/LogoIcon";
 import SearchIcon from "../../components/images/SearchIcon";
 import { Link } from "react-router";
-import { useAppSelector } from "../../redux/hooks";
-import {
-  LOCALSTORAGE_NAME_CART,
-  LOCALSTORAGE_NAME_FAVORITE,
-} from "../../constant";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { loadCart } from "../../redux/slice/cart";
+import { loadFavorite } from "../../redux/slice/favorite";
 
 interface HeaderProps {}
 
 const Header: FC<HeaderProps> = () => {
-  // const { cart } = useAppSelector((state) => state.cart);
-  const [cart, setCart] = useState<string[]>([]);
-  const [favorite, setFavorite] = useState<string[]>([]);
+  const { cart } = useAppSelector((state) => state.cart);
+  const { favorite } = useAppSelector((state) => state.favorite);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (localStorage.getItem(LOCALSTORAGE_NAME_CART)) {
-      setCart(JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME_CART)!));
-    }
-    if (localStorage.getItem(LOCALSTORAGE_NAME_FAVORITE)) {
-      setFavorite(
-        JSON.parse(localStorage.getItem(LOCALSTORAGE_NAME_FAVORITE)!)
-      );
-    }
+    dispatch(loadCart());
+    dispatch(loadFavorite());
   }, []);
 
   return (

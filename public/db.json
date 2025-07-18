@@ -4,7 +4,7 @@
     "brand": "Apple",
     "name": "Apple iPhone 14 Pro Max",
     "variant": "128GB Deep Purple",
-    "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, consectetur temporibus? Repellat sapiente odio et nobis dicta rerum, eveniet natus doloremque accusamus repellendus quas culpa beatae, tempora cum optio aperiam?",
+    "desc": "Lorem ipsum...",
     "price": 900,
     "image": "https://example.com/images/iphone14promax.png",
     "isFavorite": false,
@@ -23,9 +23,9 @@
       { "label": "Screen Size", "icon": "screen-icon", "desc": "6.7\"" },
       { "label": "CPU", "icon": "cpu-icon", "desc": "Apple A16 Bionic" },
       { "label": "Cores", "icon": "core-icon", "desc": "6" },
-      { "label": "Main Camera", "icon": "camera-icon", "desc": "48-12-12 MP" },
-      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "12 MP" },
-      { "label": "Battery", "icon": "battery-icon", "desc": "4323 mAh" }
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "48‑12‑12 MP" },
+      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "12 MP" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "4323 mAh" }
     ]
   },
   {
@@ -53,12 +53,12 @@
         "desc": "Blackmagic Custom Processor"
       },
       { "label": "Cores", "icon": "core-icon", "desc": "8" },
-      { "label": "Main Camera", "icon": "camera-icon", "desc": "23 MP" },
-      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "10 MP" },
-      { "label": "Battery", "icon": "battery-icon", "desc": "3500 mAh" },
-      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "3-5 days" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "23 MP" },
+      { "label": "Front Camera", "icon": "front-camera-icon", "desc": "10 MP" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "3500 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "3‑5 days" },
       { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
-      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "2 years" }
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "2 years" }
     ]
   },
   {
@@ -81,10 +81,10 @@
       { "label": "Cores", "icon": "core-icon", "desc": "2" },
       { "label": "Main Camera", "icon": "camera-icon", "desc": "None" },
       { "label": "Front Camera", "icon": "front-camera-icon", "desc": "None" },
-      { "label": "Battery", "icon": "battery-icon", "desc": "308 mAh" },
-      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1-2 day" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "308 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1‑2 day" },
       { "label": "In Stock", "icon": "stock-icon", "desc": "Tomorrow" },
-      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
     ]
   },
   {
@@ -110,11 +110,11 @@
       {
         "label": "Battery",
         "icon": "battery-icon",
-        "desc": "20 hours playtime"
+        "desc": "20 hours playtime"
       },
-      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "2-3 days" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "2‑3 days" },
       { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
-      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
     ]
   },
   {
@@ -137,10 +137,10 @@
       { "label": "Cores", "icon": "core-icon", "desc": "2" },
       { "label": "Main Camera", "icon": "camera-icon", "desc": "None" },
       { "label": "Front Camera", "icon": "front-camera-icon", "desc": "None" },
-      { "label": "Battery", "icon": "battery-icon", "desc": "425 mAh" },
-      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1-2 day" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "425 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1‑2 day" },
       { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
-      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
     ]
   },
   {
@@ -169,16 +169,16 @@
       },
       { "label": "CPU", "icon": "cpu-icon", "desc": "Snapdragon 8 Gen 2" },
       { "label": "Cores", "icon": "core-icon", "desc": "8" },
-      { "label": "Main Camera", "icon": "camera-icon", "desc": "50-12-10 MP" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "50‑12‑10 MP" },
       {
         "label": "Front Camera",
         "icon": "front-camera-icon",
-        "desc": "10 MP cover, 4 MP under-display"
+        "desc": "10 MP cover, 4 MP under‑display"
       },
-      { "label": "Battery", "icon": "battery-icon", "desc": "4400 mAh" },
-      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1-2 day" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "4400 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1‑2 day" },
       { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
-      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "2 years" }
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "2 years" }
     ]
   },
   {
@@ -208,11 +208,11 @@
       {
         "label": "Battery",
         "icon": "battery-icon",
-        "desc": "30 hours with case"
+        "desc": "30 hours with case"
       },
-      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "2-4 days" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "2‑4 days" },
       { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
-      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
     ]
   },
   {
@@ -236,15 +236,124 @@
       { "label": "Screen Size", "icon": "screen-icon", "desc": "10.2\"" },
       { "label": "CPU", "icon": "cpu-icon", "desc": "A13 Bionic" },
       { "label": "Cores", "icon": "core-icon", "desc": "6" },
-      { "label": "Main Camera", "icon": "camera-icon", "desc": "8 MP" },
+      { "label": "Main Camera", "icon": "camera-icon", "desc": "8 MP" },
       {
         "label": "Front Camera",
         "icon": "front-camera-icon",
-        "desc": "12 MP Ultra Wide"
+        "desc": "12 MP Ultra Wide"
       },
-      { "label": "Battery", "icon": "battery-icon", "desc": "8557 mAh" },
-      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1-2 day" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "8557 mAh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "1‑2 day" },
       { "label": "In Stock", "icon": "stock-icon", "desc": "Tomorrow" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
+  },
+  {
+    "id": 9,
+    "brand": "Sony",
+    "name": "Sony WH-1000XM5",
+    "variant": "Black",
+    "price": 348,
+    "image": "https://example.com/images/sony_wh1000xm5.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now",
+    "category": "Headphones",
+    "discountPrice": 329,
+    "originalPrice": 379,
+    "availableColors": ["black", "silver", "blue"],
+    "availableStorageOptions": [{ "storage": "N/A", "isAvailable": true }],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "N/A" },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Sony V1 Processor" },
+      { "label": "Cores", "icon": "core-icon", "desc": "4" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "30 hours" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "2‑3 days" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
+  },
+  {
+    "id": 10,
+    "brand": "Dell",
+    "name": "Dell XPS 13 9315",
+    "variant": "Intel Core i5, 8GB RAM, 256GB SSD",
+    "price": 999,
+    "image": "https://example.com/images/dell_xps13.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now",
+    "category": "Laptops",
+    "discountPrice": 949,
+    "originalPrice": 1099,
+    "availableColors": ["platinum silver", "black"],
+    "availableStorageOptions": [
+      { "storage": "256GB", "isAvailable": true },
+      { "storage": "512GB", "isAvailable": true }
+    ],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "13.4\" FHD+" },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Intel Core i5‑1230U" },
+      { "label": "Cores", "icon": "core-icon", "desc": "10" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "52 Wh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "3‑5 days" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
+  },
+  {
+    "id": 11,
+    "brand": "HP",
+    "name": "HP Spectre x360 14",
+    "variant": "Intel Core i7, 16GB RAM, 512GB SSD",
+    "price": 1449,
+    "image": "https://example.com/images/hp_spectre_x360.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now",
+    "category": "Laptops",
+    "discountPrice": 1399,
+    "originalPrice": 1599,
+    "availableColors": ["nightfall black", "poseidon blue"],
+    "availableStorageOptions": [
+      { "storage": "512GB", "isAvailable": true },
+      { "storage": "1TB", "isAvailable": false }
+    ],
+    "specifications": [
+      { "label": "Screen Size", "icon": "screen-icon", "desc": "13.5\" OLED" },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Intel Core i7‑1255U" },
+      { "label": "Cores", "icon": "core-icon", "desc": "10" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "60 Wh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "3‑5 days" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Tomorrow" },
+      { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
+    ]
+  },
+  {
+    "id": 12,
+    "brand": "Microsoft",
+    "name": "Surface Laptop Studio 2",
+    "variant": "i7, 32GB RAM, 1TB SSD",
+    "price": 2299,
+    "image": "https://example.com/images/surface_laptop_studio2.png",
+    "isFavorite": false,
+    "buttonText": "Buy Now",
+    "category": "Laptops",
+    "discountPrice": 2199,
+    "originalPrice": 2499,
+    "availableColors": ["platinum"],
+    "availableStorageOptions": [
+      { "storage": "1TB", "isAvailable": true },
+      { "storage": "512GB", "isAvailable": true }
+    ],
+    "specifications": [
+      {
+        "label": "Screen Size",
+        "icon": "screen-icon",
+        "desc": "14.4\" PixelSense Flow"
+      },
+      { "label": "CPU", "icon": "cpu-icon", "desc": "Intel Core i7‑1360P" },
+      { "label": "Cores", "icon": "core-icon", "desc": "12" },
+      { "label": "Battery", "icon": "battery-icon", "desc": "55 Wh" },
+      { "label": "Free Delivery", "icon": "delivery-icon", "desc": "3‑5 days" },
+      { "label": "In Stock", "icon": "stock-icon", "desc": "Today" },
       { "label": "Guarantee", "icon": "guarantee-icon", "desc": "1 year" }
     ]
   }

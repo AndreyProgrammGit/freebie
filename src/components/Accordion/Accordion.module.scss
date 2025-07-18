@@ -69,3 +69,19 @@
     }
   }
 }
+
+.arrow {
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+
+  &__open {
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+    transition: transform 0.3s ease;
+    transform: rotate(180deg);
+  }
+}

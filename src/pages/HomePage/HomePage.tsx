@@ -138,7 +138,7 @@ const HomePage = () => {
             handleRemoveFavorite={handleRemoveFavorite}
             favoriteIds={favoriteIds}
             handleAddToFavorite={handleAddToFavorite}
-            products={products}
+            products={products?.slice(0, 8)}
           />
         </div>
         <Banner items={banner} />

@@ -16,6 +16,7 @@ export type FilterState = {
 };
 
 type FilterContextType = {
+  filteredArr: any;
   filters: FilterState | null;
   handleChangeChecked: ({
     blockName,
@@ -37,6 +38,7 @@ export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
   useEffect(() => {
     if (products) {
       setSerialization(products);
+      setFitleredArr(products);
       const tmp: FilterState = {
         brand: {},
         category: {},
@@ -62,32 +64,6 @@ export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
     blockName: string;
     item: string;
   }) => {
-    // const tmp = Object.entries(filters);
-    // let tmp2;
-    // tmp.forEach(([key, value]) => {
-    //   products!.map((el) => {
-    //     if (key in el && value) {
-    //       const arr = Object.entries(value)
-    //         .filter((item) => Boolean(item[1]))
-    //         .map((item) => item[0]);
-    //       tmp2 = serialization.filter((item) => arr.includes(item[key]));
-    //       // console.log(tmp2);
-    //       setFitleredArr(tmp2);
-    //     }
-    //   });
-    // });
-
-    // setFilters((prev) => {
-    //   if (!prev) return prev;
-    //   return {
-    //     ...prev,
-    //     [blockName]: {
-    //       ...prev[blockName],
-    //       [item]: !prev[blockName][item],
-    //     },
-    //   };
-    // });
-
     setFilters((prev) => {
       if (!prev) return prev;
 
@@ -99,7 +75,6 @@ export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
         },
       };
 
-      // Обновляем filteredArr на основе новых фильтров
       const activeFilters = Object.entries(updated).reduce(
         (acc, [block, values]) => {
           const active = Object.entries(values)
@@ -124,10 +99,10 @@ export const FilterProvider: FC<{ children: ReactNode }> = ({ children }) => {
     });
   };
 
-  console.log(filteredArr);
-
   return (
-    <FilterContext.Provider value={{ filters, handleChangeChecked }}>
+    <FilterContext.Provider
+      value={{ filters, handleChangeChecked, filteredArr }}
+    >
       {children}
     </FilterContext.Provider>
   );

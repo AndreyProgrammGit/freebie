@@ -1,4 +1,4 @@
-import React, { useState, type FC } from "react";
+import React, { useEffect, useState, type FC } from "react";
 import type { FilterState } from "../../context/filterContext";
 import classes from "./Accordion.module.scss";
 
@@ -15,6 +15,23 @@ interface TProps {
 
 const Accordion: FC<TProps> = ({ options, handleChangeChecked }) => {
   const [openBlocks, setOpenBlocks] = useState<string[]>([]);
+  const [valueInput, setValueInput] = useState({});
+  const [debounce, setDebouncedInput] = useState({});
+
+  useEffect(() => {
+    const timers = Object.entries(valueInput).map(([block, value]) => {
+      return setTimeout(() => {
+        setDebouncedInput((prev) => ({
+          ...prev,
+          [block]: value,
+        }));
+      }, 300);
+    });
+
+    return () => {
+      timers.forEach(clearTimeout);
+    };
+  }, [valueInput]);
 
   const toggleBlock = (blockName: string) => {
     setOpenBlocks((prev) =>
@@ -34,28 +51,49 @@ const Accordion: FC<TProps> = ({ options, handleChangeChecked }) => {
             <span>
               {blockName.charAt(0).toUpperCase() + blockName.slice(1)}
             </span>
-            <button onClick={() => toggleBlock(blockName)}>
-              {openBlocks.includes(blockName) ? "Close" : "Open"}
-            </button>
+            <span
+              onClick={() => toggleBlock(blockName)}
+              className={
+                openBlocks.includes(blockName)
+                  ? classes.arrow__open
+                  : classes.arrow
+              }
+            >
+              ⮟
+            </span>
           </div>
 
           {openBlocks.includes(blockName) && (
             <div className={classes.accordion__content}>
               <div className={classes.accordion__search}>
-                <input type="text" />
+                <input
+                  type="text"
+                  onChange={(e) =>
+                    setValueInput((prev) => ({
+                      ...prev,
+                      [blockName]: e.target.value,
+                    }))
+                  }
+                />
               </div>
-              {Object.keys(options[blockName]).map((item) => (
-                <label key={item} className={classes.accordion__item}>
-                  <input
-                    type="checkbox"
-                    checked={options[blockName][item]}
-                    onChange={() => {
-                      handleChangeChecked({ blockName, item });
-                    }}
-                  />
-                  <span>{item}</span>
-                </label>
-              ))}
+              {Object.keys(options[blockName])
+                .filter((item) =>
+                  item
+                    .toLowerCase()
+                    .includes((debounce[blockName] || "").toLowerCase())
+                )
+                .map((item) => (
+                  <label key={item} className={classes.accordion__item}>
+                    <input
+                      type="checkbox"
+                      checked={options[blockName][item]}
+                      onChange={() => {
+                        handleChangeChecked({ blockName, item });
+                      }}
+                    />
+                    <span>{item}</span>
+                  </label>
+                ))}
             </div>
           )}
         </div>
