@@ -6,6 +6,8 @@ import Footer from "../widgets/Footer/Footer";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import CartPage from "../pages/CartPage/CartPage";
 import Products from "../pages/ProductsPage/Products";
+import PaymentPage from "../pages/PaymentPage/PaymentPage";
+import NotFound from "../pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/:id" element={<DetailsPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/payment/:id" element={<PaymentPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

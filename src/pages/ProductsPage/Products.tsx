@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import CardList from "../../components/CardList/CardList";
-import { useGetProductsQuery } from "../../redux/slice/api/products";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   addToFavorite,

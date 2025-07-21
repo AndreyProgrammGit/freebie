@@ -107,7 +107,8 @@ const DetailsPage = () => {
             <ButtonGroup
               buttonTextFirst="Add to Wishlist"
               buttonTextSecond="Add to Card"
-              buttonClick={handleAddToCart}
+              buttonSecondClick={handleAddToCart}
+              buttonFirstClick={() => ""}
             />
           </div>
         </div>

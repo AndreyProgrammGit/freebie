@@ -5,16 +5,26 @@ import classes from "./ButtonGroup.module.scss";
 export const ButtonGroup = ({
   buttonTextFirst,
   buttonTextSecond,
-  buttonClick,
+  buttonFirstClick,
+  buttonSecondClick,
 }: {
   buttonTextFirst: string;
   buttonTextSecond: string;
-  buttonClick: () => void;
+  buttonFirstClick: () => void;
+  buttonSecondClick: () => void;
 }) => {
   return (
     <div className={classes.buttonContainer}>
-      <button className={classes.buttonFirst}>{buttonTextFirst}</button>
-      <button onClick={() => buttonClick()} className={classes.ButtonSecond}>
+      <button
+        onClick={() => buttonFirstClick()}
+        className={classes.buttonFirst}
+      >
+        {buttonTextFirst}
+      </button>
+      <button
+        onClick={() => buttonSecondClick()}
+        className={classes.ButtonSecond}
+      >
         {buttonTextSecond}
       </button>
     </div>

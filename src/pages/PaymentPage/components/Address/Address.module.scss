@@ -1,0 +1,38 @@
+.elements__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add_address_wrapper {
+  text-align: center;
+  margin: 40px 0;
+  font-family: sans-serif;
+}
+
+.line_with_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed #ccc;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 12px;
+  cursor: pointer;
+}

@@ -5,11 +5,13 @@ import { bannerApi } from "./slice/api/banner";
 import { discountsApi } from "./slice/api/discounts";
 import { cartSlice } from "./slice/cart";
 import { favoriteSlice } from "./slice/favorite";
+import { addressSlice } from "./slice/address";
 
 export const store = configureStore({
   reducer: {
     cart: cartSlice.reducer,
     favorite: favoriteSlice.reducer,
+    address: addressSlice.reducer,
     [productsApi.reducerPath]: productsApi.reducer,
     [categoriesApi.reducerPath]: categoriesApi.reducer,
     [bannerApi.reducerPath]: bannerApi.reducer,
