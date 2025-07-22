@@ -1,0 +1,10 @@
+.wrapper {
+  &__wrapper_elements {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &:last-child {
+      margin-bottom: 14rem;
+    }
+  }
+}

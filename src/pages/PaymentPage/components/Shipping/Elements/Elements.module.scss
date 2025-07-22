@@ -1,0 +1,22 @@
+.container {
+  background-color: transparent;
+  border: 1px solid #d1d1d8;
+  border-radius: 11px;
+  padding: 1.5rem;
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__info {
+      input[type="radio"] {
+        margin: 0;
+        accent-color: black;
+        width: 24px;
+        height: 24px;
+      }
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+}

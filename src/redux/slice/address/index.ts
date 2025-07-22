@@ -17,6 +17,13 @@ export const addressSlice = createSlice({
   name: "address",
   initialState,
   reducers: {
+    addNewAddress: (state, payload) => {
+      state.address.push({
+        title: "",
+        address: "",
+        phoneNumber: "",
+      });
+    },
     addToLocalStorage: (state, action) => {
       const existingRaw = localStorage.getItem(LOCALSTORAGE_NAME_ADDRESS);
       let existing: any = [];
@@ -61,5 +68,5 @@ export const addressSlice = createSlice({
   },
 });
 
-export const { addToLocalStorage, loadStorage, removeOne } =
+export const { addToLocalStorage, loadStorage, removeOne, addNewAddress } =
   addressSlice.actions;

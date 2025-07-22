@@ -6,9 +6,11 @@ import { discountsApi } from "./slice/api/discounts";
 import { cartSlice } from "./slice/cart";
 import { favoriteSlice } from "./slice/favorite";
 import { addressSlice } from "./slice/address";
+import { paymentSlice } from "./slice/payment";
 
 export const store = configureStore({
   reducer: {
+    payment: paymentSlice.reducer,
     cart: cartSlice.reducer,
     favorite: favoriteSlice.reducer,
     address: addressSlice.reducer,

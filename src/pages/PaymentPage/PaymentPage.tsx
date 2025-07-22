@@ -8,10 +8,12 @@ import { Navigate, useNavigate, useParams } from "react-router";
 import Address from "./components/Address/Address.tsx";
 import { ButtonGroup } from "../../components/ButtonGroup/ButtonGroup.tsx";
 import Shipping from "./components/Shipping/Shipping.tsx";
+import { useAppSelector } from "../../redux/hooks.ts";
 
 const PaymentPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { isChooseAddress } = useAppSelector((state) => state.payment);
 
   if (id && +id > steps.length) {
     return <Navigate to="not-found" replace />;
@@ -55,6 +57,7 @@ const PaymentPage = () => {
           buttonTextSecond={"Next"}
           buttonFirstClick={handleBack}
           buttonSecondClick={handleNext}
+          isDisabled={!Boolean(isChooseAddress)}
         />
       </div>
     </Container>

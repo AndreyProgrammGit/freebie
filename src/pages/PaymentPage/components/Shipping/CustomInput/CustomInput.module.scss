@@ -1,0 +1,25 @@
+.datepickerButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+  //   padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  background-color: white;
+  color: #a1a1b0;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: border 0.2s;
+
+  &:hover {
+    border-color: #b0b0b0;
+  }
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #a1a1b0;
+}
