@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetProductByIdQuery } from "../../redux/slice/api/products";
 import { useParams } from "react-router";
 
@@ -45,7 +45,7 @@ const DetailsPage = () => {
 
   useEffect(() => {
     setStorageSize(
-      data?.availableStorageOptions.find((el) => el.isAvailable)?.storage
+      data?.availableStorageOptions.find((el) => el.isAvailable)?.storage,
     );
     setSelectColor(data?.availableColors[0]);
   }, [data]);

@@ -9,6 +9,7 @@
     align-items: center;
     &__info {
       input[type="radio"] {
+        cursor: pointer;
         margin: 0;
         accent-color: black;
         width: 24px;

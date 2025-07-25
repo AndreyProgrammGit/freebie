@@ -7,6 +7,7 @@ import { cartSlice } from "./slice/cart";
 import { favoriteSlice } from "./slice/favorite";
 import { addressSlice } from "./slice/address";
 import { paymentSlice } from "./slice/payment";
+import { orderDiscountApiSlice } from "./slice/api/orderDiscount";
 
 export const store = configureStore({
   reducer: {
@@ -18,13 +19,15 @@ export const store = configureStore({
     [categoriesApi.reducerPath]: categoriesApi.reducer,
     [bannerApi.reducerPath]: bannerApi.reducer,
     [discountsApi.reducerPath]: discountsApi.reducer,
+    [orderDiscountApiSlice.reducerPath]: orderDiscountApiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
       .concat(productsApi.middleware)
       .concat(categoriesApi.middleware)
       .concat(bannerApi.middleware)
-      .concat(discountsApi.middleware),
+      .concat(discountsApi.middleware)
+      .concat(orderDiscountApiSlice.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

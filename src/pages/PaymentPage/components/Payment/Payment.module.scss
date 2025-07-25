@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  gap: 13rem;
+
+  &__summary {
+    width: 50%;
+  }
+
+  &__payment_form {
+    width: 50%;
+  }
+}

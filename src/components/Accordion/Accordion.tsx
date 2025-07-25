@@ -1,4 +1,4 @@
-import React, { useEffect, useState, type FC } from "react";
+import { useEffect, useState, type FC } from "react";
 import type { FilterState } from "../../context/filterContext";
 import classes from "./Accordion.module.scss";
 
@@ -37,7 +37,7 @@ const Accordion: FC<TProps> = ({ options, handleChangeChecked }) => {
     setOpenBlocks((prev) =>
       prev.includes(blockName)
         ? prev.filter((name) => name !== blockName)
-        : [...prev, blockName]
+        : [...prev, blockName],
     );
   };
 
@@ -47,12 +47,14 @@ const Accordion: FC<TProps> = ({ options, handleChangeChecked }) => {
     <div className={classes.accordion}>
       {Object.keys(options).map((blockName) => (
         <div key={blockName} className={classes.accordion__block}>
-          <div className={classes.accordion__header}>
+          <div
+            onClick={() => toggleBlock(blockName)}
+            className={classes.accordion__header}
+          >
             <span>
               {blockName.charAt(0).toUpperCase() + blockName.slice(1)}
             </span>
             <span
-              onClick={() => toggleBlock(blockName)}
               className={
                 openBlocks.includes(blockName)
                   ? classes.arrow__open
@@ -63,39 +65,44 @@ const Accordion: FC<TProps> = ({ options, handleChangeChecked }) => {
             </span>
           </div>
 
-          {openBlocks.includes(blockName) && (
-            <div className={classes.accordion__content}>
-              <div className={classes.accordion__search}>
-                <input
-                  type="text"
-                  onChange={(e) =>
-                    setValueInput((prev) => ({
-                      ...prev,
-                      [blockName]: e.target.value,
-                    }))
-                  }
-                />
-              </div>
-              {Object.keys(options[blockName])
-                .filter((item) =>
-                  item
-                    .toLowerCase()
-                    .includes((debounce[blockName] || "").toLowerCase())
-                )
-                .map((item) => (
-                  <label key={item} className={classes.accordion__item}>
-                    <input
-                      type="checkbox"
-                      checked={options[blockName][item]}
-                      onChange={() => {
-                        handleChangeChecked({ blockName, item });
-                      }}
-                    />
-                    <span>{item}</span>
-                  </label>
-                ))}
+          <div
+            className={`${classes.accordion__content} ${
+              openBlocks.includes(blockName)
+                ? classes["accordion__content--open"]
+                : ""
+            }`}
+          >
+            <div className={classes.accordion__search}>
+              <input
+                placeholder="Search"
+                type="text"
+                onChange={(e) =>
+                  setValueInput((prev) => ({
+                    ...prev,
+                    [blockName]: e.target.value,
+                  }))
+                }
+              />
             </div>
-          )}
+            {Object.keys(options[blockName])
+              .filter((item) =>
+                item
+                  .toLowerCase()
+                  .includes((debounce[blockName] || "").toLowerCase()),
+              )
+              .map((item) => (
+                <label key={item} className={classes.accordion__item}>
+                  <input
+                    type="checkbox"
+                    checked={options[blockName][item]}
+                    onChange={() => {
+                      handleChangeChecked({ blockName, item });
+                    }}
+                  />
+                  <span>{item}</span>
+                </label>
+              ))}
+          </div>
         </div>
       ))}
     </div>

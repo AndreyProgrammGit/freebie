@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Container from "../../components/Container/Container";
 
 import classes from "./CartPage.module.scss";
@@ -12,6 +12,7 @@ import {
 
 import Elements from "./components/Elemets/Elements";
 import CartForm from "./components/CartForm/CartForm";
+import { sumPriceAllProducts } from "../../utils/sumPriceAllProducts";
 
 const CartPage = () => {
   const dispatch = useAppDispatch();
@@ -23,7 +24,7 @@ const CartPage = () => {
 
   useEffect(() => {
     dispatch(loadCart());
-  }, []);
+  }, [dispatch]);
 
   const handleRemoveProduct = (id: number) => {
     dispatch(removeCart(id));
@@ -35,14 +36,6 @@ const CartPage = () => {
 
   const handleRemoveCart = (id: number) => {
     dispatch(removeOne(id));
-  };
-
-  const sumPriceAllProductsCart = () => {
-    let sum = 0;
-    for (const value of cart) {
-      sum += value.quantityPrice!;
-    }
-    return sum;
   };
 
   return (
@@ -68,7 +61,7 @@ const CartPage = () => {
           </ul>
         </div>
         <div className={classes.cart__summary__wrapper}>
-          <CartForm sumPriceAllProductsCart={sumPriceAllProductsCart} />
+          <CartForm sumPriceAllProducts={() => sumPriceAllProducts(cart)} />
         </div>
       </div>
     </Container>

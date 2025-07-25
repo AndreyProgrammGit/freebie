@@ -1,4 +1,4 @@
-import { useEffect, useState, type FC } from "react";
+import { useEffect, type FC } from "react";
 
 import classes from "./Header.module.scss";
 import HeartIcon from "../../components/images/HeartIcon";
@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { loadCart } from "../../redux/slice/cart";
 import { loadFavorite } from "../../redux/slice/favorite";
 
-interface HeaderProps {}
+type HeaderProps = object;
 
 const Header: FC<HeaderProps> = () => {
   const { cart } = useAppSelector((state) => state.cart);
@@ -21,7 +21,7 @@ const Header: FC<HeaderProps> = () => {
   useEffect(() => {
     dispatch(loadCart());
     dispatch(loadFavorite());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={classes.header__wrapper}>

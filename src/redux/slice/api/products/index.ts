@@ -10,7 +10,7 @@ export const productsApi = createApi({
     }),
     getProductById: build.query<Data, number>({
       query: () => `db.json`,
-      transformResponse: (response: any[], meta, arg: number) => {
+      transformResponse: (response: any[], _, arg: number) => {
         return response.find((item) => item.id === arg);
       },
     }),

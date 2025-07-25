@@ -1,0 +1,23 @@
+.wrapper {
+  span {
+    padding: 1rem 0;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.wrapper__method {
+  color: gray;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.active {
+  color: black;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}

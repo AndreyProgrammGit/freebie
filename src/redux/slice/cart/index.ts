@@ -4,10 +4,18 @@ import type { Data } from "../../../pages/DetailsPage/DetailsPage";
 
 interface CartState {
   cart: Data[];
+  discount: {
+    code: string;
+    bonus: string;
+  };
 }
 
 const initialState: CartState = {
   cart: [],
+  discount: {
+    code: "",
+    bonus: "",
+  },
 };
 
 export const cartSlice = createSlice({
@@ -38,7 +46,6 @@ export const cartSlice = createSlice({
       localStorage.setItem(LOCALSTORAGE_NAME_CART, JSON.stringify(existing));
       state.cart = existing;
     },
-
     loadCart: (state) => {
       const existingRaw = localStorage.getItem(LOCALSTORAGE_NAME_CART);
       if (existingRaw) {
@@ -57,7 +64,7 @@ export const cartSlice = createSlice({
         state.cart = state.cart.filter((item) => item.id !== find.id);
         localStorage.setItem(
           LOCALSTORAGE_NAME_CART,
-          JSON.stringify(state.cart)
+          JSON.stringify(state.cart),
         );
       }
     },
@@ -91,9 +98,17 @@ export const cartSlice = createSlice({
         .filter((item) => item.quantity! > 0);
       localStorage.setItem(LOCALSTORAGE_NAME_CART, JSON.stringify(state.cart));
     },
+    getDiscountTotal: (state, action) => {
+      state.discount = action.payload;
+    },
   },
 });
 
-export const { addToCart, loadCart, removeCart, addOne, removeOne } =
-  cartSlice.actions;
-export default cartSlice.reducer;
+export const {
+  addToCart,
+  loadCart,
+  removeCart,
+  addOne,
+  removeOne,
+  getDiscountTotal,
+} = cartSlice.actions;

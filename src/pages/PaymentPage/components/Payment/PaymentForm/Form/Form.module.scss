@@ -1,0 +1,32 @@
+.wrapper__form{
+  width: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  input{
+    padding:  1rem;
+    border: 1px solid #CECECE;
+    border-radius: 7px;
+    &::placeholder{}
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.5%;
+    vertical-align: middle;
+    color: #979797;
+  }
+
+  &__backside{
+    display: flex;
+    gap: 1rem;
+  }
+  &__save_addres{
+    margin: 3rem 0;
+  }
+}
+
+.errors{
+  font-size: 13px;
+  color: red;
+  line-height: 13px;
+}

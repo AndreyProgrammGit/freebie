@@ -1,0 +1,46 @@
+{
+  "discount_codes": [
+    {
+      "id": 1,
+      "code": 111111,
+      "sale": 100
+    },
+    {
+      "id": 2,
+      "code": 111112,
+      "sale": 90
+    },
+    {
+      "id": 3,
+      "code": 111113,
+      "sale": 80
+    },
+    {
+      "id": 4,
+      "code": 111114,
+      "sale": 70
+    }
+  ],
+  "discount_bonuses": [
+    {
+      "id": 1,
+      "bonus": 222222,
+      "sale": 50
+    },
+    {
+      "id": 2,
+      "bonus": 222223,
+      "sale": 40
+    },
+    {
+      "id": 3,
+      "bonus": 222224,
+      "sale": 30
+    },
+    {
+      "id": 4,
+      "bonus": 222225,
+      "sale": 20
+    }
+  ]
+}

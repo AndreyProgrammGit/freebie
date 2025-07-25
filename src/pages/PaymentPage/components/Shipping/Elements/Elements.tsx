@@ -50,7 +50,10 @@ const Elements: FC<TProps> = ({
   };
 
   return (
-    <div className={classes.container}>
+    <div
+      className={classes.container}
+      style={{ opacity: paymentMethod.method !== method ? 0.5 : 1 }}
+    >
       <div className={classes.container__items}>
         <div className={classes.container__items__info}>
           <input

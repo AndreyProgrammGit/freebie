@@ -1,30 +1,60 @@
+@use "../../scss/index" as *;
+
 .accordion {
   display: flex;
   flex-direction: column;
   width: 16rem;
 
+  &__search {
+    text-align: center;
+   input{
+     width: calc(15rem - 2.5rem);
+     padding: 0.7rem 1.25rem;
+     border-radius: 8px;
+     border: none;
+     background-color: $input-bg;
+     color: $input-text;
+     &::placeholder {
+       color: $input-placeholder;
+       //padding-left: 25px;
+     }
+   }
+  }
+
   &__block {
     width: 100%;
     margin-bottom: 1.5rem;
+    cursor: pointer;
   }
   &__header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    border-bottom: 0.5px solid #B5B5B5;
     padding: 0.75rem 0;
+
     span {
-      font-family: Inter;
+      font-family: Inter, serif;
       font-weight: 500;
       font-size: 18px;
       line-height: 24px;
-      letter-spacing: 3%;
     }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+
+    &--open{
+      max-height: 500px;
+      opacity: 1;
+    }
   }
+
+
 
   &__search {
     margin: 1rem 0;
@@ -39,7 +69,6 @@
       height: 20px;
       border: 2px solid #555;
       border-radius: 4px;
-      cursor: pointer;
       position: relative;
       &:checked {
         background-color: #000;
@@ -57,11 +86,10 @@
       }
     }
     span {
-      font-family: Inter;
+      font-family: Inter, serif;
       font-weight: 500;
       font-size: 15px;
       line-height: 24px;
-      letter-spacing: 0%;
       margin-left: 0.5rem;
     }
     &:not(:last-child) {

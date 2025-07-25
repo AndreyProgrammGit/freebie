@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Container from "../../components/Container/Container";
 import Steps from "./components/Steps/Steps.tsx";
 import { steps } from "./config/config.tsx";
@@ -9,11 +8,16 @@ import Address from "./components/Address/Address.tsx";
 import { ButtonGroup } from "../../components/ButtonGroup/ButtonGroup.tsx";
 import Shipping from "./components/Shipping/Shipping.tsx";
 import { useAppSelector } from "../../redux/hooks.ts";
+import Payment from "./components/Payment/Payment.tsx";
+import {useRef} from "react";
 
 const PaymentPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { isChooseAddress } = useAppSelector((state) => state.payment);
+  const { isChooseAddress, paymentMethod } = useAppSelector(
+    (state) => state.payment
+  );
+  const paySubmitRef = useRef<(() => void) | null>(null);
 
   if (id && +id > steps.length) {
     return <Navigate to="not-found" replace />;
@@ -26,6 +30,16 @@ const PaymentPage = () => {
 
   const handleNext = () => {
     const nextStep = Math.min(steps.length, +id! + 1);
+
+    if (+id! === 1 && !isChooseAddress) return;
+    else if (+id! === 2 && !paymentMethod.delivery) return;
+    else if (+id! === 3) {
+      if (paySubmitRef.current) {
+        paySubmitRef.current();
+      }
+      return;
+    }
+
     navigate(`/payment/${nextStep}`);
   };
 
@@ -37,6 +51,8 @@ const PaymentPage = () => {
       case "2":
         return <Shipping />;
         break;
+      case "3":
+        return <Payment onSubmitRef={paySubmitRef} />;
       default:
         break;
     }
@@ -54,10 +70,9 @@ const PaymentPage = () => {
       <div className={classes.buttons}>
         <ButtonGroup
           buttonTextFirst={"Back"}
-          buttonTextSecond={"Next"}
+          buttonTextSecond={+id! !== 3 ? "Next" : "Pay"}
           buttonFirstClick={handleBack}
           buttonSecondClick={handleNext}
-          isDisabled={!Boolean(isChooseAddress)}
         />
       </div>
     </Container>

@@ -7,13 +7,11 @@ export const ButtonGroup = ({
   buttonTextSecond,
   buttonFirstClick,
   buttonSecondClick,
-  isDisabled,
 }: {
   buttonTextFirst: string;
   buttonTextSecond: string;
   buttonFirstClick: () => void;
   buttonSecondClick: () => void;
-  isDisabled?: boolean;
 }) => {
   return (
     <div className={classes.buttonContainer}>
@@ -24,7 +22,6 @@ export const ButtonGroup = ({
         {buttonTextFirst}
       </button>
       <button
-        disabled={isDisabled}
         onClick={() => buttonSecondClick()}
         className={classes.ButtonSecond}
       >

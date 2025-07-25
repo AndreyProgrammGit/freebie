@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
 import Accordion from "../../../../components/Accordion/Accordion";
 import { useFilter } from "../../../../context/filterContext";
+import React from "react";
 
 export type Product = {
   id: string;
